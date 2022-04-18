@@ -3,36 +3,66 @@ import { styled } from "../../stitches.config";
 export const HeaderComponent = styled("header", {
   width: "auto",
   height: "100vh",
-  position: "fixed",
+  position: "sticky",
+  top: 0,
+  left: 0,
   flexUtil: {
     fFlow: "column",
     fJustifyContent: "center",
-    fAlignItems: "center",
+    fAlignItems: "flex-start",
   },
 
-  button: {
-    margin: "30px 20px",
-    width: "50px",
-    height: "50px",
-    borderRadius: "50%",
-    background: "transparent",
-    fontSize: "1.5rem",
-    transition: ".2s",
-
-    "&:hover": {
-      filter: "contrast(20)",
+  ".logo": {
+    padding: "20px",
+    flexUtil: {
+      fFlow: "row",
+      fJustifyContent: "center",
+      fAlignItems: "center",
     },
+    gap: "5px",
 
-    "&.checked": {
-      border: "2px solid",
+    h1: {
+      textAlign: "center",
+      fontSize: "1.8em",
     },
   },
 
-  ".fitness-section-btn": {
-    color: "$fitnessIconColor",
-  },
+  ".buttons": {
+    marginTop: "auto",
+    marginBottom: "auto",
+    flexUtil: {
+      fFlow: "column",
+    },
 
-  ".food-section-btn": {
-    color: "$foodIconColor",
+    button: {
+      margin: "30px 20px",
+      width: "50px",
+      height: "50px",
+      borderRadius: "50%",
+      background: "transparent",
+      fontSize: "1.5rem",
+      transition: ".2s",
+      alignSelf: "flex-start",
+
+      "&:hover": {
+        opacity: "0.85",
+      },
+    },
+
+    ".fitness-section-btn": {
+      color: "$lapisLazulli",
+
+      "&.checked": {
+        border: "2px solid",
+      },
+    },
+
+    ".food-section-btn": {
+      color: "$terraCota",
+
+      "&.checked": {
+        border: "2px solid",
+      },
+    },
   },
 });

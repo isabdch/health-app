@@ -18,11 +18,16 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      bgColor: "#F9FCED",
-      fitnessIconColor: "#3D405B",
-      foodIconColor: "#E07A5F",
+      ivory: "#F9FCED",
+      independence: "#3D405B",
+      terraCota: "#E07A5F",
+      black66: "#00000066",
+      greenSheen: "#6FC3AB",
+      lapisLazulli: "#1E6091",
     },
-    shadows: {},
+    shadows: {
+      lapisLazulli: "#1E6091",
+    },
   },
   media: {
     max1080px: "(max-width: 1080px)",

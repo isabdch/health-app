@@ -14,13 +14,24 @@ export const globalStyles = globalCss({
   body: {
     width: "100vw",
     height: "100vh",
-    background: "$bgColor",
   },
 
   "*": {
     padding: 0,
     margin: 0,
     boxSizing: "border-box",
+    fontFamily: "'Inter', sans-serif",
+  },
+
+  "#root": {
+    width: "100%",
+    height: "100%",
+    background: "$ivory",
+    flexUtil: {
+      fFlow: "row no-wrap",
+      fAlignItems: "",
+      fJustifyContent: "",
+    },
   },
 
   button: {
@@ -35,5 +46,34 @@ export const globalStyles = globalCss({
 
   li: {
     listStyle: "none",
+  },
+
+  ".modal-overlay": {
+    position: "fixed",
+    inset: 0,
+    backgroundColor: "$black66",
+  },
+
+  ".modal-content": {
+    position: "absolute",
+    inset: "50% 50%",
+    transform: "translate(-50%, -50%)",
+    width: "90vw",
+    height: "fit-content",
+    maxWidth: "fit-content",
+    background: "$greenSheen",
+    color: "$lapisLazulli",
+    overflowY: "auto",
+    WebkitOverflowScrolling: "touch",
+    borderRadius: "20px",
+    outline: "none",
+    padding: "20px",
+
+    flexUtil: {
+      fFlow: "column",
+      fAlignItems: "center",
+      fJustifyContent: "space-between",
+    },
+    gap: "20px",
   },
 });

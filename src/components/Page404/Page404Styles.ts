@@ -1,1 +1,1 @@
-import { styled } from "../../../stitches.config";
+import { styled } from "../../stitches.config";

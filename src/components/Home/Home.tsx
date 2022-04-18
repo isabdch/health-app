@@ -1,3 +1,10 @@
+import { HomeMain } from "./HomeStyles";
+import { Modal } from "./Modal/Modal";
+
 export function Home() {
-  return <h1>Home</h1>;
+  return (
+    <HomeMain>
+      <Modal />
+    </HomeMain>
+  );
 }
