@@ -14,35 +14,35 @@ export function Header() {
       </div>
 
       <div className="buttons">
-        <button
-          className={
-            checkedBtn === "fitness-section-btn"
-              ? "fitness-section-btn checked"
-              : "fitness-section-btn"
-          }
-          onClick={() => {
-            setCheckedBtn("fitness-section-btn");
-          }}
-        >
-          <Link to="/">
+        <Link to="/">
+          <button
+            className={
+              checkedBtn === "fitness-section-btn"
+                ? "fitness-section-btn checked"
+                : "fitness-section-btn"
+            }
+            onClick={() => {
+              setCheckedBtn("fitness-section-btn");
+            }}
+          >
             <i className="fa-solid fa-heart-pulse"></i>
-          </Link>
-        </button>
+          </button>
+        </Link>
 
-        <button
-          className={
-            checkedBtn === "food-section-btn"
-              ? "food-section-btn checked"
-              : "food-section-btn"
-          }
-          onClick={() => {
-            setCheckedBtn("food-section-btn");
-          }}
-        >
-          <Link to="/food">
+        <Link to="/food">
+          <button
+            className={
+              checkedBtn === "food-section-btn"
+                ? "food-section-btn checked"
+                : "food-section-btn"
+            }
+            onClick={() => {
+              setCheckedBtn("food-section-btn");
+            }}
+          >
             <i className="fa-duotone fa-carrot"></i>
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     </HeaderComponent>
   );

@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ReactModal from "react-modal";
+import { ageContext } from "../../../hooks/ageHook";
 import { ModalComponent } from "./ModalStyles";
 
 ReactModal.setAppElement("#root");
 
 export function Modal() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [age, setAge] = useContext(ageContext);
 
   return (
     <ModalComponent
@@ -17,12 +19,12 @@ export function Modal() {
 
       <form>
         <div className="modal-input age-input">
-          <label>Age</label>
+          <label>Age*</label>
           <input type="number" name="" id="" />
         </div>
 
         <div className="gender-input">
-          <label>Gender</label>
+          <label>Gender*</label>
           <div className="gender-container-btns">
             <button>
               <i className="fa-regular fa-venus"></i>
@@ -34,34 +36,41 @@ export function Modal() {
         </div>
 
         <div className="modal-input weight-input">
-          <label>Weight</label>
+          <label>Weight (kg)*</label>
           <input type="number" name="" id="" />
         </div>
 
         <div className="modal-input height-input">
-          <label>Height</label>
+          <label>Height (cm)*</label>
           <input type="number" name="" id="" />
         </div>
 
         <div className="fbp-container">
           <div className="fbp-input neck-input">
-            <label>Neck</label>
+            <label>Neck (cm)</label>
             <input type="number" name="" id="" />
           </div>
 
           <div className="fbp-input waist-input">
-            <label>Waist</label>
+            <label>Waist (cm)</label>
             <input type="number" name="" id="" />
           </div>
 
           <div className="fbp-input hip-input">
-            <label>Hip</label>
+            <label>Hip (cm)</label>
             <input type="number" name="" id="" />
           </div>
         </div>
       </form>
 
-      <button className="save-modal-data-btn">Save</button>
+      <button
+        onClick={() => {
+          setIsModalOpen(false);
+        }}
+        className="save-modal-data-btn"
+      >
+        Save
+      </button>
     </ModalComponent>
   );
 }

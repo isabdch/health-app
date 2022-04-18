@@ -6,6 +6,7 @@ export const ModalComponent = styled(ReactModal, {
     textAlign: "center",
     fontSize: "1.8em",
     width: "80%",
+    textShadow: "0px 1px 0px $ivory",
   },
 
   form: {
@@ -26,7 +27,8 @@ export const ModalComponent = styled(ReactModal, {
         backgroundColor: "inherit",
         padding: "inherit",
         outline: "none",
-        fontSize: "1em",
+        fontSize: "1.2em",
+        color: "$lapisLazulli",
       },
 
       "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button": {
@@ -54,7 +56,7 @@ export const ModalComponent = styled(ReactModal, {
         gap: "15px",
 
         button: {
-          width: "60px",
+          width: "70px",
           height: "70px",
           padding: "5px",
           backgroundColor: "$ivory",
@@ -120,7 +122,7 @@ export const ModalComponent = styled(ReactModal, {
 
         input: {
           backgroundColor: "inherit",
-          width: "60px",
+          width: "70px",
           height: "50px",
           padding: "5px",
           textAlign: "center",
@@ -130,7 +132,7 @@ export const ModalComponent = styled(ReactModal, {
   },
 
   ".save-modal-data-btn": {
-    padding: "15px 55px",
+    padding: "15px 56px",
     borderRadius: "10px",
     fontSize: "1.1em",
     backgroundColor: "$lapisLazulli",

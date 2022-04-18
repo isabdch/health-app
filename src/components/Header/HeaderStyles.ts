@@ -24,6 +24,7 @@ export const HeaderComponent = styled("header", {
     h1: {
       textAlign: "center",
       fontSize: "1.8em",
+      color: "$lapisLazulli",
     },
   },
 

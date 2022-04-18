@@ -27,6 +27,7 @@ export const {
     },
     shadows: {
       lapisLazulli: "#1E6091",
+      ivory: "#F9FCED",
     },
   },
   media: {
