@@ -12,11 +12,11 @@ type HeightProviderProps = {
 };
 
 export const heightContext = createContext<
-  [number, Dispatch<SetStateAction<number>>]
->([0, () => {}]);
+  [number | string, Dispatch<SetStateAction<number | string>>]
+>(["", () => {}]);
 
 export function HeightProvider({ children }: HeightProviderProps) {
-  const [height, setHeight] = useState<number>(0);
+  const [height, setHeight] = useState<number | string>("");
 
   useEffect(() => {}, []);
 

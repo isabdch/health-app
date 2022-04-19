@@ -12,11 +12,11 @@ type AgeProviderProps = {
 };
 
 export const ageContext = createContext<
-  [number, Dispatch<SetStateAction<number>>]
->([0, () => {}]);
+  [number | string, Dispatch<SetStateAction<number | string>>]
+>(["", () => {}]);
 
 export function AgeProvider({ children }: AgeProviderProps) {
-  const [age, setAge] = useState<number>(0);
+  const [age, setAge] = useState<number | string>("");
 
   useEffect(() => {}, []);
 

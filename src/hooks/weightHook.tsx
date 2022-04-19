@@ -12,11 +12,11 @@ type WeightProviderProps = {
 };
 
 export const weightContext = createContext<
-  [number, Dispatch<SetStateAction<number>>]
->([0, () => {}]);
+  [number | string, Dispatch<SetStateAction<number | string>>]
+>(["", () => {}]);
 
 export function WeightProvider({ children }: WeightProviderProps) {
-  const [weight, setWeight] = useState<number>(0);
+  const [weight, setWeight] = useState<number | string>("");
 
   useEffect(() => {}, []);
 

@@ -12,21 +12,21 @@ type FbpProviderProps = {
 };
 
 type ProviderValue = {
-  neckFbp: [number, Dispatch<SetStateAction<number>>];
-  waistFbp: [number, Dispatch<SetStateAction<number>>];
-  hipFbp: [number, Dispatch<SetStateAction<number>>];
+  neckFbp: [number | string, Dispatch<SetStateAction<number | string>>];
+  waistFbp: [number | string, Dispatch<SetStateAction<number | string>>];
+  hipFbp: [number | string, Dispatch<SetStateAction<number | string>>];
 };
 
 export const fbpContext = createContext<ProviderValue>({
-  neckFbp: [0, () => {}],
-  waistFbp: [0, () => {}],
-  hipFbp: [0, () => {}],
+  neckFbp: ["", () => {}],
+  waistFbp: ["", () => {}],
+  hipFbp: ["", () => {}],
 });
 
 export function FbpProvider({ children }: FbpProviderProps) {
-  const [neck, setNeck] = useState<number>(0);
-  const [waist, setWaist] = useState<number>(0);
-  const [hip, setHip] = useState<number>(0);
+  const [neck, setNeck] = useState<number | string>("");
+  const [waist, setWaist] = useState<number | string>("");
+  const [hip, setHip] = useState<number | string>("");
 
   useEffect(() => {}, []);
 

@@ -140,7 +140,7 @@ export const ModalComponent = styled(ReactModal, {
     transition: ".2s",
     outline: "none",
 
-    "&:hover": {
+    "&:hover, &:disabled": {
       opacity: "0.85",
     },
 
