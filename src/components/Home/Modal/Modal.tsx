@@ -1,13 +1,21 @@
 import { useContext, useState } from "react";
 import ReactModal from "react-modal";
 import { ageContext } from "../../../hooks/ageHook";
+import { genderContext } from "../../../hooks/genderHook";
+import { heightContext } from "../../../hooks/heightHook";
+import { weightContext } from "../../../hooks/weightHook";
 import { ModalComponent } from "./ModalStyles";
 
 ReactModal.setAppElement("#root");
 
 export function Modal() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [pickGender, setPickGender] = useState<string | null>(null);
+
   const [age, setAge] = useContext(ageContext);
+  const [gender, setGender] = useContext(genderContext);
+  const [weight, setWeight] = useContext(weightContext);
+  const [height, setHeight] = useContext(heightContext);
 
   return (
     <ModalComponent

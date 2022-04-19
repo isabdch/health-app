@@ -15,7 +15,7 @@ export const genderContext = createContext<
   [string | null, Dispatch<SetStateAction<string | null>>]
 >([null, () => {}]);
 
-export function AgeProvider({ children }: GenderProviderProps) {
+export function GenderProvider({ children }: GenderProviderProps) {
   const [gender, setGender] = useState<string | null>(null);
 
   useEffect(() => {}, []);
