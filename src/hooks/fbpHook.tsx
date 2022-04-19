@@ -12,9 +12,9 @@ type FbpProviderProps = {
 };
 
 type ProviderValue = {
-  neckFbp: [number | string, Dispatch<SetStateAction<number | string>>];
-  waistFbp: [number | string, Dispatch<SetStateAction<number | string>>];
-  hipFbp: [number | string, Dispatch<SetStateAction<number | string>>];
+  neckFbp: [string, Dispatch<SetStateAction<string>>];
+  waistFbp: [string, Dispatch<SetStateAction<string>>];
+  hipFbp: [string, Dispatch<SetStateAction<string>>];
 };
 
 export const fbpContext = createContext<ProviderValue>({
@@ -24,11 +24,23 @@ export const fbpContext = createContext<ProviderValue>({
 });
 
 export function FbpProvider({ children }: FbpProviderProps) {
-  const [neck, setNeck] = useState<number | string>("");
-  const [waist, setWaist] = useState<number | string>("");
-  const [hip, setHip] = useState<number | string>("");
+  const [neck, setNeck] = useState<string>("");
+  const [waist, setWaist] = useState<string>("");
+  const [hip, setHip] = useState<string>("");
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (localStorage.getItem("neck") != null) {
+      setNeck(localStorage.getItem("neck")!);
+    }
+
+    if (localStorage.getItem("waist") != null) {
+      setHip(localStorage.getItem("waist")!);
+    }
+
+    if (localStorage.getItem("hip") != null) {
+      setHip(localStorage.getItem("hip")!);
+    }
+  }, []);
 
   return (
     <fbpContext.Provider

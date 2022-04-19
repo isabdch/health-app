@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import { ageContext } from "../../../hooks/ageHook";
 import { fbpContext } from "../../../hooks/fbpHook";
@@ -20,6 +20,14 @@ export function Modal() {
   const [neck, setNeck] = neckFbp;
   const [waist, setWaist] = waistFbp;
   const [hip, setHip] = hipFbp;
+
+  useEffect(() => {
+    if (localStorage.getItem("modalAppearance") != null) {
+      setIsModalOpen(false);
+    } else {
+      setIsModalOpen(true);
+    }
+  }, []);
 
   return (
     <ModalComponent
@@ -139,7 +147,14 @@ export function Modal() {
         onClick={() => {
           if (age !== "" && gender !== null && weight !== "" && height !== "") {
             setIsModalOpen(false);
-            console.log(age, gender, weight, height, neck, waist, hip);
+            localStorage.setItem("modalAppearance", JSON.stringify(true));
+            localStorage.setItem("age", age);
+            localStorage.setItem("gender", gender);
+            localStorage.setItem("weight", weight);
+            localStorage.setItem("height", height);
+            localStorage.setItem("neck", neck);
+            localStorage.setItem("waist", waist);
+            localStorage.setItem("hip", hip);
           }
         }}
         className="save-modal-data-btn"

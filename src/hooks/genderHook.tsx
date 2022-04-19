@@ -18,7 +18,11 @@ export const genderContext = createContext<
 export function GenderProvider({ children }: GenderProviderProps) {
   const [gender, setGender] = useState<string | null>(null);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (localStorage.getItem("gender") != null) {
+      setGender(localStorage.getItem("gender"));
+    }
+  }, []);
 
   return (
     <genderContext.Provider value={[gender, setGender]}>

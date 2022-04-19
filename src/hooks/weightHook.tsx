@@ -12,13 +12,17 @@ type WeightProviderProps = {
 };
 
 export const weightContext = createContext<
-  [number | string, Dispatch<SetStateAction<number | string>>]
+  [string, Dispatch<SetStateAction<string>>]
 >(["", () => {}]);
 
 export function WeightProvider({ children }: WeightProviderProps) {
-  const [weight, setWeight] = useState<number | string>("");
+  const [weight, setWeight] = useState<string>("");
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (localStorage.getItem("weight") != null) {
+      setWeight(localStorage.getItem("weight")!);
+    }
+  }, []);
 
   return (
     <weightContext.Provider value={[weight, setWeight]}>

@@ -12,13 +12,17 @@ type HeightProviderProps = {
 };
 
 export const heightContext = createContext<
-  [number | string, Dispatch<SetStateAction<number | string>>]
+  [string, Dispatch<SetStateAction<string>>]
 >(["", () => {}]);
 
 export function HeightProvider({ children }: HeightProviderProps) {
-  const [height, setHeight] = useState<number | string>("");
+  const [height, setHeight] = useState<string>("");
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (localStorage.getItem("height") != null) {
+      setHeight(localStorage.getItem("height")!);
+    }
+  }, []);
 
   return (
     <heightContext.Provider value={[height, setHeight]}>

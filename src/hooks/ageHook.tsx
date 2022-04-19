@@ -12,13 +12,17 @@ type AgeProviderProps = {
 };
 
 export const ageContext = createContext<
-  [number | string, Dispatch<SetStateAction<number | string>>]
+  [string, Dispatch<SetStateAction<string>>]
 >(["", () => {}]);
 
 export function AgeProvider({ children }: AgeProviderProps) {
-  const [age, setAge] = useState<number | string>("");
+  const [age, setAge] = useState<string>("");
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (localStorage.getItem("age") != null) {
+      setAge(localStorage.getItem("age")!);
+    }
+  }, []);
 
   return (
     <ageContext.Provider value={[age, setAge]}>{children}</ageContext.Provider>
