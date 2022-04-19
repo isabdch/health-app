@@ -14,6 +14,7 @@ export const globalStyles = globalCss({
   body: {
     width: "100vw",
     height: "100vh",
+    overflowY: "auto",
   },
 
   "*": {
@@ -44,14 +45,11 @@ export const globalStyles = globalCss({
     textDecoration: "none",
   },
 
-  li: {
-    listStyle: "none",
-  },
-
   ".modal-overlay": {
     position: "fixed",
     inset: 0,
     backgroundColor: "$black66",
+    overflowY: "auto",
   },
 
   ".modal-content": {
@@ -75,5 +73,14 @@ export const globalStyles = globalCss({
       fJustifyContent: "space-between",
     },
     gap: "20px",
+
+    "@min1440px": {
+      gap: "1vw",
+      borderRadius: "1vw",
+    },
+
+    "@max768px": {
+      gap: "10px",
+    },
   },
 });

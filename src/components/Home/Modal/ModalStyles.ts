@@ -77,6 +77,16 @@ export const ModalComponent = styled(ReactModal, {
           "&:hover": {
             opacity: "0.85",
           },
+
+          "@min1440px": {
+            width: "5vw",
+            height: "5vw",
+          },
+
+          "@max768px": {
+            width: "65px",
+            height: "65px",
+          },
         },
       },
     },
@@ -126,8 +136,38 @@ export const ModalComponent = styled(ReactModal, {
           height: "50px",
           padding: "5px",
           textAlign: "center",
+
+          "@min1440px": {
+            width: "5vw",
+            height: "3.5vw",
+          },
+
+          "@max768px": {
+            width: "60px",
+            height: "45px",
+          },
         },
       },
+
+      "@min1440px": {
+        gap: "1vw",
+      },
+
+      "@max768px": {
+        gap: "10px",
+      },
+    },
+
+    "@min1440px": {
+      gap: "1vw",
+    },
+
+    "@max768px": {
+      gap: "10px",
+    },
+
+    "@max320px": {
+      width: "95%",
     },
   },
 
@@ -140,12 +180,29 @@ export const ModalComponent = styled(ReactModal, {
     transition: ".2s",
     outline: "none",
 
-    "&:hover, &:disabled": {
+    "&:hover": {
       opacity: "0.85",
+    },
+
+    "&:disabled": {
+      opacity: "0.6",
+      cursor: "not-allowed",
     },
 
     "&:focus": {
       boxShadow: "0 0 0 1px $lapisLazulli",
     },
+
+    "@min1440px": {
+      padding: "1vw 3.5vw",
+    },
+  },
+
+  "@min1440px": {
+    fontSize: "1.1vw",
+  },
+
+  "@max768px": {
+    fontSize: "0.8em",
   },
 });

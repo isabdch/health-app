@@ -31,8 +31,12 @@ export const {
     },
   },
   media: {
+    min1440px: "(min-width: 1440px)",
     max1080px: "(max-width: 1080px)",
+    max1024px: "(max-width: 1024px)",
+    max768px: "(max-width: 768px)",
     max720px: "(max-width: 720px)",
+    max320px: "(max-width: 320px)",
   },
   utils: {
     flexUtil: ({ fJustifyContent, fAlignItems, fFlow }: flexUtilType) => ({

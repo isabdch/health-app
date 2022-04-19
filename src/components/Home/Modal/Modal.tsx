@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import ReactModal from "react-modal";
 import { ageContext } from "../../../hooks/ageHook";
 import { fbpContext } from "../../../hooks/fbpHook";
@@ -21,11 +21,6 @@ export function Modal() {
   const [waist, setWaist] = waistFbp;
   const [hip, setHip] = hipFbp;
 
-  const ageRef = useRef<HTMLLabelElement>(null);
-  const genderRef = useRef<HTMLLabelElement>(null);
-  const weightRef = useRef<HTMLLabelElement>(null);
-  const heightRef = useRef<HTMLLabelElement>(null);
-
   return (
     <ModalComponent
       className="modal-content"
@@ -37,7 +32,7 @@ export function Modal() {
 
       <form>
         <div className="modal-input age-input">
-          <label ref={ageRef}>Age*</label>
+          <label>Age*</label>
           <input
             value={age}
             onChange={(event) => {
@@ -48,7 +43,7 @@ export function Modal() {
         </div>
 
         <div className="gender-input">
-          <label ref={genderRef}>Gender*</label>
+          <label>Gender*</label>
           <div className="gender-container-btns">
             <button
               className={gender === "female" ? "checked" : ""}
@@ -72,7 +67,7 @@ export function Modal() {
         </div>
 
         <div className="modal-input weight-input">
-          <label ref={weightRef}>Weight (kg)*</label>
+          <label>Weight (kg)*</label>
           <input
             value={weight}
             onChange={(event) => {
@@ -83,7 +78,7 @@ export function Modal() {
         </div>
 
         <div className="modal-input height-input">
-          <label ref={heightRef}>Height (cm)*</label>
+          <label>Height (cm)*</label>
           <input
             value={height}
             onChange={(event) => {
@@ -145,18 +140,6 @@ export function Modal() {
           if (age !== "" && gender !== null && weight !== "" && height !== "") {
             setIsModalOpen(false);
             console.log(age, gender, weight, height, neck, waist, hip);
-          } else {
-            if (
-              ageRef.current !== null &&
-              genderRef.current !== null &&
-              weightRef.current !== null &&
-              heightRef.current !== null
-            ) {
-              ageRef.current.style.color = "red";
-              genderRef.current.style.color = "red";
-              weightRef.current.style.color = "red";
-              heightRef.current.style.color = "red";
-            }
           }
         }}
         className="save-modal-data-btn"
