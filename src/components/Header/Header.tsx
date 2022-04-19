@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HeaderComponent } from "./HeaderStyles";
 import { LogoImg } from "../../assets/LogoImg";
 
 export function Header() {
-  const [checkedBtn, setCheckedBtn] = useState<string>("fitness-section-btn");
-
-  useEffect(() => {
-    if (localStorage.getItem("checkedBtn") != null) {
-      setCheckedBtn(localStorage.getItem("checkedBtn")!);
-    }
-  }, []);
+  const location = useLocation();
 
   return (
     <HeaderComponent>
@@ -23,14 +16,10 @@ export function Header() {
         <Link to="/">
           <button
             className={
-              checkedBtn === "fitness-section-btn"
+              location.pathname === "/"
                 ? "fitness-section-btn checked"
                 : "fitness-section-btn"
             }
-            onClick={() => {
-              setCheckedBtn("fitness-section-btn");
-              localStorage.setItem("checkedBtn", "fitness-section-btn");
-            }}
           >
             <i className="fa-solid fa-heart-pulse"></i>
           </button>
@@ -39,14 +28,10 @@ export function Header() {
         <Link to="/food">
           <button
             className={
-              checkedBtn === "food-section-btn"
+              location.pathname === "/food"
                 ? "food-section-btn checked"
                 : "food-section-btn"
             }
-            onClick={() => {
-              setCheckedBtn("food-section-btn");
-              localStorage.setItem("checkedBtn", "food-section-btn");
-            }}
           >
             <i className="fa-duotone fa-carrot"></i>
           </button>
