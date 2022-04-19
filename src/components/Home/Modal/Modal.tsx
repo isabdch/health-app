@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import ReactModal from "react-modal";
 import { ageContext } from "../../../hooks/ageHook";
+import { fbpContext } from "../../../hooks/fbpHook";
 import { genderContext } from "../../../hooks/genderHook";
 import { heightContext } from "../../../hooks/heightHook";
 import { weightContext } from "../../../hooks/weightHook";
@@ -16,6 +17,10 @@ export function Modal() {
   const [gender, setGender] = useContext(genderContext);
   const [weight, setWeight] = useContext(weightContext);
   const [height, setHeight] = useContext(heightContext);
+  const { neckFbp, waistFbp, hipFbp } = useContext(fbpContext);
+  const [neck, setNeck] = neckFbp;
+  const [waist, setWaist] = waistFbp;
+  const [hip, setHip] = hipFbp;
 
   return (
     <ModalComponent
