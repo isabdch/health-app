@@ -6,7 +6,7 @@ export const ModalComponent = styled(ReactModal, {
     textAlign: "center",
     fontSize: "1.8em",
     width: "80%",
-    textShadow: "0px 1px 0px $ivory",
+    fontFamily: "'Comfortaa', cursive",
   },
 
   form: {
@@ -162,7 +162,7 @@ export const ModalComponent = styled(ReactModal, {
       gap: "1vw",
     },
 
-    "@max768px": {
+    "@max1024px": {
       gap: "10px",
     },
 

@@ -25,6 +25,7 @@ export const HeaderComponent = styled("header", {
       textAlign: "center",
       fontSize: "1.8em",
       color: "$lapisLazulli",
+      fontFamily: "'Comfortaa', cursive",
 
       "@max720px": {
         display: "none",

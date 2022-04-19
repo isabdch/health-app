@@ -9,7 +9,7 @@ export function Header() {
     <HeaderComponent>
       <div className="logo">
         <LogoImg />
-        <h1>Healthy</h1>
+        <h1>healthy</h1>
       </div>
 
       <div className="buttons">

@@ -1,3 +1,5 @@
+import { FoodSectionMain } from "./FoodSectionStyles";
+
 export function FoodSection() {
-    return <h1>Food Section</h1>
+  return <FoodSectionMain></FoodSectionMain>;
 }
