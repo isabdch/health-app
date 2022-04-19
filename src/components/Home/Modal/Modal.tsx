@@ -10,7 +10,7 @@ import { ModalComponent } from "./ModalStyles";
 ReactModal.setAppElement("#root");
 
 export function Modal() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const [age, setAge] = useContext(ageContext);
   const [gender, setGender] = useContext(genderContext);

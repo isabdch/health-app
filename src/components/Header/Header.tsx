@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HeaderComponent } from "./HeaderStyles";
 import { LogoImg } from "../../assets/LogoImg";
 
 export function Header() {
   const [checkedBtn, setCheckedBtn] = useState<string>("fitness-section-btn");
+
+  useEffect(() => {
+    if (localStorage.getItem("checkedBtn") != null) {
+      setCheckedBtn(localStorage.getItem("checkedBtn")!);
+    }
+  }, []);
 
   return (
     <HeaderComponent>
@@ -23,6 +29,7 @@ export function Header() {
             }
             onClick={() => {
               setCheckedBtn("fitness-section-btn");
+              localStorage.setItem("checkedBtn", "fitness-section-btn");
             }}
           >
             <i className="fa-solid fa-heart-pulse"></i>
@@ -38,6 +45,7 @@ export function Header() {
             }
             onClick={() => {
               setCheckedBtn("food-section-btn");
+              localStorage.setItem("checkedBtn", "food-section-btn");
             }}
           >
             <i className="fa-duotone fa-carrot"></i>

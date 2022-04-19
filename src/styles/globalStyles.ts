@@ -14,6 +14,7 @@ export const globalStyles = globalCss({
   body: {
     width: "100vw",
     height: "100vh",
+    background: "$ivory",
     overflowY: "auto",
   },
 
@@ -27,7 +28,6 @@ export const globalStyles = globalCss({
   "#root": {
     width: "100%",
     height: "100%",
-    background: "$ivory",
     flexUtil: {
       fFlow: "row no-wrap",
       fAlignItems: "",

@@ -25,6 +25,10 @@ export const HeaderComponent = styled("header", {
       textAlign: "center",
       fontSize: "1.8em",
       color: "$lapisLazulli",
+
+      "@max720px": {
+        display: "none",
+      },
     },
   },
 
@@ -48,6 +52,18 @@ export const HeaderComponent = styled("header", {
       "&:hover": {
         opacity: "0.85",
       },
+
+      "@min1440px": {
+        width: "3.5vw",
+        height: "3.5vw",
+        fontSize: "1.6vw",
+      },
+
+      "@max720px": {
+        width: "40px",
+        height: "40px",
+        fontSize: "1.2rem",
+      },
     },
 
     ".fitness-section-btn": {
@@ -65,5 +81,9 @@ export const HeaderComponent = styled("header", {
         border: "2px solid",
       },
     },
+  },
+
+  "@min1440px": {
+    fontSize: "1vw",
   },
 });
