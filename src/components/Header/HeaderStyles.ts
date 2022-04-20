@@ -47,7 +47,7 @@ export const HeaderComponent = styled("header", {
       borderRadius: "50%",
       background: "transparent",
       fontSize: "1.5rem",
-      transition: ".2s",
+      transition: ".1s",
       alignSelf: "flex-start",
 
       "&:hover": {
