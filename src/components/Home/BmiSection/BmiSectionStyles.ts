@@ -2,5 +2,9 @@ import { styled } from "../../../stitches.config";
 
 export const BmiSectionComponent = styled("section", {
   gridArea: "bmiSection",
-  border: "1px solid",
+  padding: "1vw",
+
+  "@max768px": {
+    padding: "15px",
+  },
 });
