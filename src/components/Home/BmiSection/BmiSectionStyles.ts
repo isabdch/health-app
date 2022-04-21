@@ -33,10 +33,10 @@ export const BmiSectionComponent = styled("section", {
     color: "$ivory",
     borderRadius: "20px",
     textAlign: "justify",
-    flexUtil: {
-      fJustifyContent: "flex-start",
+
+    span: {
+      marginRight: "10px",
     },
-    gap: "8px",
 
     "@min1440px": {
       borderRadius: "1vw",

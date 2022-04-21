@@ -2,7 +2,7 @@ import { styled } from "../../../stitches.config";
 
 export const UserDataSectionComponent = styled("section", {
   gridArea: "userDataSection",
-  padding: "1vw",
+  padding: "1vw 2vw",
   flexUtil: {
     fFlow: "row",
     fAlignItems: "center",
