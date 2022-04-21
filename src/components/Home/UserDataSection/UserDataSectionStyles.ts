@@ -5,27 +5,24 @@ export const UserDataSectionComponent = styled("section", {
   padding: "1vw",
   flexUtil: {
     fFlow: "row",
-    fAlignItems: "flex-start",
+    fAlignItems: "center",
     fJustifyContent: "flex-end",
   },
 
   ".user-data-container": {
-    width: "100%",
+    width: "200px",
     height: "max-content",
     backgroundColor: "$celadon",
     color: "$cgBlue",
+    border: "4px solid $keppel",
     borderRadius: "20px",
-    padding: "1vw",
+    padding: "1vw 3vw",
     flexUtil: {
       fFlow: "column",
       fAlignItems: "center",
       fJustifyContent: "space-between",
     },
     gap: "3vh",
-
-    h1: {
-      fontFamily: "'Comfortaa', cursive",
-    },
 
     ".user-data-content": {
       margin: "auto",
@@ -68,6 +65,10 @@ export const UserDataSectionComponent = styled("section", {
       },
     },
 
+    "@min1440px": {
+      width: "max-content",
+    },
+
     "@max768px": {
       padding: "10px",
     },
@@ -80,5 +81,13 @@ export const UserDataSectionComponent = styled("section", {
 
   "@max768px": {
     padding: "15px",
+  },
+
+  "@max425px": {
+    flexUtil: {
+      fFlow: "row",
+      fAlignItems: "flex-start",
+      fJustifyContent: "center",
+    },
   },
 });

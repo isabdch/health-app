@@ -1,7 +1,16 @@
 import ReactModal from "react-modal";
-import { styled } from "../../../stitches.config";
+import { keyframes, styled } from "../../../stitches.config";
+
+const modalShow = keyframes({
+  "0%": { opacity: 0, transform: "translate(-50%, -48%) scale(.96)" },
+  "100%": { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
+});
 
 export const ModalComponent = styled(ReactModal, {
+  "@media (prefers-reduced-motion: no-preference)": {
+    animation: `${modalShow} .1s ease both`,
+  },
+
   h1: {
     textAlign: "center",
     fontSize: "1.8em",

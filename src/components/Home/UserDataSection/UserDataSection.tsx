@@ -21,8 +21,6 @@ export function UserDataSection() {
   return (
     <UserDataSectionComponent>
       <div className="user-data-container">
-        <h1>User data</h1>
-
         <div className="user-data-content">
           <div className="user-data user-age">
             Age: <span>{age !== "" ? age + "y" : "--"}</span>

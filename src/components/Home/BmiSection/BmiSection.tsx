@@ -50,8 +50,8 @@ export function BmiSection() {
 
   return (
     <BmiSectionComponent>
-      <h2>Your BMI is</h2>
-      <h1>{bmi.toString()}</h1>
+      <h2>Your BMI is:</h2>
+      <h1>{isNaN(bmi) ? 0 : bmi.toString()}</h1>
       <p className="bmi-description">
         This is considered <strong>{bmiDescription}</strong>
       </p>
@@ -62,7 +62,7 @@ export function BmiSection() {
         <span>
           <i className="fa-solid fa-circle-info"></i>
         </span>
-        <p>
+        <div>
           BMI is not used for muscle builders, long distance athletes, pregnant
           women, the elderly or young children. This is because BMI does not
           take into account whether the weight is carried as muscle or fat, just
@@ -72,7 +72,7 @@ export function BmiSection() {
           the elderly who may be losing some muscle mass may have a lower BMI.
           During pregnancy and lactation, a woman's body composition changes, so
           using BMI is not appropriate.
-        </p>
+        </div>
       </div>
     </BmiSectionComponent>
   );
