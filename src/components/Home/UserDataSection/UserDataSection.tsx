@@ -25,7 +25,7 @@ export function UserDataSection() {
 
         <div className="user-data-content">
           <div className="user-data user-age">
-            Age: <span>{age}</span>
+            Age: <span>{age}y</span>
           </div>
           <div className="user-data user-gender">
             Gender: <span>{gender}</span>
@@ -34,11 +34,7 @@ export function UserDataSection() {
             Weight: <span>{weight}kg</span>
           </div>
           <div className="user-data user-height">
-            Height:{" "}
-            <span>
-              {height.slice(0, 1) + "." + height.slice(1, height.length)}
-              cm
-            </span>
+            Height: <span>{height}cm</span>
           </div>
           <div className="user-data user-neck">
             Neck: <span>{neck !== "" ? neck + "cm" : "--"}</span>

@@ -14,7 +14,6 @@ export const UserDataSectionComponent = styled("section", {
     height: "100%",
     backgroundColor: "$celadon",
     color: "$cgBlue",
-    // border: "4px solid $keppel",
     borderRadius: "20px",
     padding: "1vw",
     flexUtil: {
@@ -28,6 +27,7 @@ export const UserDataSectionComponent = styled("section", {
     },
 
     ".user-data-content": {
+      margin: "auto",
       width: "30%",
       flexUtil: {
         fFlow: "column",

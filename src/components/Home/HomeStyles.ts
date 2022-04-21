@@ -5,5 +5,5 @@ export const HomeMain = styled("main", {
   height: "100vh",
   display: "grid",
   gridTemplateAreas:
-    "'bmiSection userDataSection' 'extraInfoSection extraInfoSection'",
+    "'bmiSection bmiSection userDataSection' 'extraInfoSection extraInfoSection extraInfoSection'",
 });
