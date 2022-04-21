@@ -19,11 +19,21 @@ export const {
   theme: {
     colors: {
       ivory: "#F9FCED",
-      independence: "#3D405B",
       terraCota: "#E07A5F",
-      black66: "#00000066",
+      celadon: "#BBE6B3",
+      yellowGreenCrayola: "#D9ED92",
+      darkerYellowGreenCrayola: "#B5E48C",
+      grannySmithApple: "#99D98C",
+      oceanGreen: "#76C893",
       greenSheen: "#6FC3AB",
+      keppel: "#52B69A",
+      viridianGreen: "#34A0A4",
+      blueMunsell: "#168AAD",
+      cgBlue: "#1A759F",
       lapisLazulli: "#1E6091",
+      yaleBlue: "#184E77",
+      independence: "#3D405B",
+      black66: "#00000066",
     },
     shadows: {
       lapisLazulli: "#1E6091",
