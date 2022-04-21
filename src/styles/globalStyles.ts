@@ -48,7 +48,7 @@ export const globalStyles = globalCss({
   ".modal-overlay": {
     position: "fixed",
     inset: 0,
-    backgroundColor: "$black66",
+    backgroundColor: "$blackb3",
     overflowY: "auto",
   },
 

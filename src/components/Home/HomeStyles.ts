@@ -6,4 +6,8 @@ export const HomeMain = styled("main", {
   display: "grid",
   gridTemplateAreas:
     "'bmiSection bmiSection userDataSection' 'extraInfoSection extraInfoSection extraInfoSection'",
+
+  "@max768px": {
+    gridTemplateAreas: "'bmiSection' 'extraInfoSection' 'userDataSection'",
+  },
 });

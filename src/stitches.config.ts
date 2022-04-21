@@ -33,7 +33,7 @@ export const {
       lapisLazulli: "#1E6091",
       yaleBlue: "#184E77",
       independence: "#3D405B",
-      black66: "#00000066",
+      blackb3: "#000000B3",
     },
     shadows: {
       lapisLazulli: "#1E6091",

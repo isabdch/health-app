@@ -11,7 +11,7 @@ export const UserDataSectionComponent = styled("section", {
 
   ".user-data-container": {
     width: "100%",
-    height: "100%",
+    height: "max-content",
     backgroundColor: "$celadon",
     color: "$cgBlue",
     borderRadius: "20px",
@@ -21,6 +21,7 @@ export const UserDataSectionComponent = styled("section", {
       fAlignItems: "center",
       fJustifyContent: "space-between",
     },
+    gap: "3vh",
 
     h1: {
       fontFamily: "'Comfortaa', cursive",
@@ -34,7 +35,7 @@ export const UserDataSectionComponent = styled("section", {
         fAlignItems: "center",
         fJustifyContent: "center",
       },
-      gap: "10px",
+      gap: "3vh",
 
       ".user-data": {
         textAlign: "center",
@@ -63,6 +64,7 @@ export const UserDataSectionComponent = styled("section", {
 
       "@min1440px": {
         padding: "0.7vw 2.5vw",
+        fontSize: "1vw",
       },
     },
 
@@ -73,6 +75,7 @@ export const UserDataSectionComponent = styled("section", {
 
   "@min1440px": {
     borderRadius: "1vw",
+    fontSize: "1.2vw",
   },
 
   "@max768px": {

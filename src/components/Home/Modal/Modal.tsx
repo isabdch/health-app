@@ -34,6 +34,7 @@ export function Modal() {
         <div className="modal-input age-input">
           <label>Age*</label>
           <input
+            autoFocus
             value={age}
             onChange={(event) => {
               setAge(event.target.value);
@@ -46,19 +47,19 @@ export function Modal() {
           <label>Gender*</label>
           <div className="gender-container-btns">
             <button
-              className={gender === "female" ? "checked" : ""}
+              className={gender === "Female" ? "checked" : ""}
               onClick={(event) => {
                 event.preventDefault();
-                setGender("female");
+                setGender("Female");
               }}
             >
               <i className="fa-regular fa-venus"></i>
             </button>
             <button
-              className={gender === "male" ? "checked" : ""}
+              className={gender === "Male" ? "checked" : ""}
               onClick={(event) => {
                 event.preventDefault();
-                setGender("male");
+                setGender("Male");
               }}
             >
               <i className="fa-regular fa-mars"></i>
@@ -139,7 +140,7 @@ export function Modal() {
         onClick={() => {
           if (age !== "" && gender !== null && weight !== "" && height !== "") {
             setModal(false);
-            localStorage.setItem("modal", "open");
+            localStorage.setItem("modal", "Open");
             localStorage.setItem("age", age);
             localStorage.setItem("gender", gender);
             localStorage.setItem("weight", weight);
