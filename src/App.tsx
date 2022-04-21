@@ -7,6 +7,7 @@ import { AgeProvider } from "./hooks/ageHook";
 import { FbpProvider } from "./hooks/fbpHook";
 import { GenderProvider } from "./hooks/genderHook";
 import { HeightProvider } from "./hooks/heightHook";
+import { ModalProvider } from "./hooks/modalHook";
 import { WeightProvider } from "./hooks/weightHook";
 import { globalStyles } from "./styles/globalStyles";
 
@@ -14,23 +15,25 @@ export default function App() {
   globalStyles();
 
   return (
-    <AgeProvider>
-      <GenderProvider>
-        <WeightProvider>
-          <HeightProvider>
-            <FbpProvider>
-              <BrowserRouter>
-                <Header />
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="food" element={<FoodSection />} />
-                  <Route path="*" element={<Page404 />} />
-                </Routes>
-              </BrowserRouter>
-            </FbpProvider>
-          </HeightProvider>
-        </WeightProvider>
-      </GenderProvider>
-    </AgeProvider>
+    <ModalProvider>
+      <AgeProvider>
+        <GenderProvider>
+          <WeightProvider>
+            <HeightProvider>
+              <FbpProvider>
+                <BrowserRouter>
+                  <Header />
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="food" element={<FoodSection />} />
+                    <Route path="*" element={<Page404 />} />
+                  </Routes>
+                </BrowserRouter>
+              </FbpProvider>
+            </HeightProvider>
+          </WeightProvider>
+        </GenderProvider>
+      </AgeProvider>
+    </ModalProvider>
   );
 }

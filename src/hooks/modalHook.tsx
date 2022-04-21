@@ -3,6 +3,7 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useEffect,
   useState,
 } from "react";
 
@@ -15,10 +16,18 @@ export const modalContext = createContext<
 >([false, () => {}]);
 
 export function ModalProvider({ children }: ModalProviderProps) {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [modal, setModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("modal") != null) {
+      setModal(false);
+    } else {
+      setModal(true);
+    }
+  }, []);
 
   return (
-    <modalContext.Provider value={[isModalOpen, setIsModalOpen]}>
+    <modalContext.Provider value={[modal, setModal]}>
       {children}
     </modalContext.Provider>
   );

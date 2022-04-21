@@ -1,5 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import ReactModal from "react-modal";
+import { modalContext } from "../../../hooks/modalHook";
 import { ageContext } from "../../../hooks/ageHook";
 import { fbpContext } from "../../../hooks/fbpHook";
 import { genderContext } from "../../../hooks/genderHook";
@@ -10,8 +11,7 @@ import { ModalComponent } from "./ModalStyles";
 ReactModal.setAppElement("#root");
 
 export function Modal() {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
+  const [modal, setModal] = useContext(modalContext);
   const [age, setAge] = useContext(ageContext);
   const [gender, setGender] = useContext(genderContext);
   const [weight, setWeight] = useContext(weightContext);
@@ -21,19 +21,11 @@ export function Modal() {
   const [waist, setWaist] = waistFbp;
   const [hip, setHip] = hipFbp;
 
-  useEffect(() => {
-    if (localStorage.getItem("modalAppearance") != null) {
-      setIsModalOpen(false);
-    } else {
-      setIsModalOpen(true);
-    }
-  }, []);
-
   return (
     <ModalComponent
       className="modal-content"
       overlayClassName="modal-overlay"
-      isOpen={isModalOpen}
+      isOpen={modal}
       contentLabel="Please enter your data in the fields below"
     >
       <h1>Please enter your data in the fields below:</h1>
@@ -146,8 +138,8 @@ export function Modal() {
         }
         onClick={() => {
           if (age !== "" && gender !== null && weight !== "" && height !== "") {
-            setIsModalOpen(false);
-            localStorage.setItem("modalAppearance", JSON.stringify(true));
+            setModal(false);
+            localStorage.setItem("modal", "open");
             localStorage.setItem("age", age);
             localStorage.setItem("gender", gender);
             localStorage.setItem("weight", weight);
