@@ -26,7 +26,7 @@ export function UserDataSection() {
             Age: <span>{age !== "" ? age + "y" : "--"}</span>
           </div>
           <div className="user-data user-gender">
-            Gender: <span>{gender !== "" ? gender : "--"}</span>
+            Gender: <span>{gender !== null ? gender : "--"}</span>
           </div>
           <div className="user-data user-weight">
             Weight: <span>{weight !== "" ? weight + "kg" : "--"}</span>
