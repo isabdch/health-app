@@ -40,7 +40,7 @@ export const ExtraInfoSectionComponent = styled("section", {
       svg: {
         position: "absolute",
         right: "-2%",
-        top: "35%",
+        top: "36%",
         zIndex: "-1",
       },
 
@@ -82,6 +82,10 @@ export const ExtraInfoSectionComponent = styled("section", {
 
       h1: {
         fontSize: "2.5em",
+      },
+
+      div: {
+        fontSize: "1.1em",
       },
 
       "@min1440px": {
