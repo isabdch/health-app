@@ -79,7 +79,7 @@ export function ExtraInfoSection() {
           </div>
           <div className="fbp-info-tips">
             <strong>Tip:</strong> take a look at the food and recipes section!
-            there, you will find many delicious healthy meal ideas.
+            There you will find many delicious healthy meal ideas.
           </div>
         </div>
       </div>
