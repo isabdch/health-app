@@ -32,7 +32,7 @@ export const globalStyles = globalCss({
     flexUtil: {
       fFlow: "row",
       fAlignItems: "center",
-      fJustifyContent: "center",
+      fJustifyContent: "",
     },
   },
 

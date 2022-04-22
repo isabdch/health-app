@@ -39,8 +39,8 @@ export const ExtraInfoSectionComponent = styled("section", {
 
       svg: {
         position: "absolute",
-        right: "-3%",
-        top: "25%",
+        right: "-2%",
+        top: "35%",
         zIndex: "-1",
       },
 
@@ -54,6 +54,10 @@ export const ExtraInfoSectionComponent = styled("section", {
         svg: {
           display: "none",
         },
+      },
+
+      "@max768px": {
+        fontSize: "0.8em",
       },
     },
 
@@ -84,6 +88,10 @@ export const ExtraInfoSectionComponent = styled("section", {
         borderRadius: "1vw",
         padding: "1vw",
         gap: "1vw",
+      },
+
+      "@max768px": {
+        fontSize: "0.8em",
       },
     },
 

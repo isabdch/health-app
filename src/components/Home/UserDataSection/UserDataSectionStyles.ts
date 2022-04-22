@@ -22,7 +22,7 @@ export const UserDataSectionComponent = styled("section", {
       fAlignItems: "center",
       fJustifyContent: "space-between",
     },
-    gap: "3vh",
+    gap: "2vh",
 
     ".user-data-content": {
       margin: "auto",
@@ -32,7 +32,7 @@ export const UserDataSectionComponent = styled("section", {
         fAlignItems: "center",
         fJustifyContent: "center",
       },
-      gap: "3vh",
+      gap: "2vh",
 
       ".user-data": {
         textAlign: "center",

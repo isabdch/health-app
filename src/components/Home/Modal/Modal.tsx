@@ -2,7 +2,6 @@ import { useContext } from "react";
 import ReactModal from "react-modal";
 import { modalContext } from "../../../hooks/modalHook";
 import { ageContext } from "../../../hooks/ageHook";
-import { fbpContext } from "../../../hooks/fbpHook";
 import { genderContext } from "../../../hooks/genderHook";
 import { heightContext } from "../../../hooks/heightHook";
 import { weightContext } from "../../../hooks/weightHook";
@@ -16,10 +15,6 @@ export function Modal() {
   const [gender, setGender] = useContext(genderContext);
   const [weight, setWeight] = useContext(weightContext);
   const [height, setHeight] = useContext(heightContext);
-  const { neckFbp, waistFbp, hipFbp } = useContext(fbpContext);
-  const [neck, setNeck] = neckFbp;
-  const [waist, setWaist] = waistFbp;
-  const [hip, setHip] = hipFbp;
 
   return (
     <ModalComponent
@@ -88,41 +83,6 @@ export function Modal() {
             type="number"
           />
         </div>
-
-        <div className="fbp-container">
-          <div className="fbp-input neck-input">
-            <label>Neck (cm)</label>
-            <input
-              value={neck}
-              onChange={(event) => {
-                setNeck(event.target.value);
-              }}
-              type="number"
-            />
-          </div>
-
-          <div className="fbp-input waist-input">
-            <label>Waist (cm)</label>
-            <input
-              value={waist}
-              onChange={(event) => {
-                setWaist(event.target.value);
-              }}
-              type="number"
-            />
-          </div>
-
-          <div className="fbp-input hip-input">
-            <label>Hip (cm)</label>
-            <input
-              value={hip}
-              onChange={(event) => {
-                setHip(event.target.value);
-              }}
-              type="number"
-            />
-          </div>
-        </div>
       </form>
 
       <button
@@ -145,9 +105,6 @@ export function Modal() {
             localStorage.setItem("gender", gender);
             localStorage.setItem("weight", weight);
             localStorage.setItem("height", height);
-            localStorage.setItem("neck", neck);
-            localStorage.setItem("waist", waist);
-            localStorage.setItem("hip", hip);
           }
         }}
         className="save-modal-data-btn"

@@ -4,7 +4,6 @@ import { ageContext } from "../../../hooks/ageHook";
 import { genderContext } from "../../../hooks/genderHook";
 import { weightContext } from "../../../hooks/weightHook";
 import { heightContext } from "../../../hooks/heightHook";
-import { fbpContext } from "../../../hooks/fbpHook";
 import { UserDataSectionComponent } from "./UserDataSectionStyles";
 
 export function UserDataSection() {
@@ -13,10 +12,6 @@ export function UserDataSection() {
   const [gender] = useContext(genderContext);
   const [weight] = useContext(weightContext);
   const [height] = useContext(heightContext);
-  const { neckFbp, waistFbp, hipFbp } = useContext(fbpContext);
-  const [neck] = neckFbp;
-  const [waist] = waistFbp;
-  const [hip] = hipFbp;
 
   return (
     <UserDataSectionComponent>
@@ -33,15 +28,6 @@ export function UserDataSection() {
           </div>
           <div className="user-data user-height">
             Height: <span>{height !== "" ? height + "cm" : "--"}</span>
-          </div>
-          <div className="user-data user-neck">
-            Neck: <span>{neck !== "" ? neck + "cm" : "--"}</span>
-          </div>
-          <div className="user-data user-waist">
-            Waist: <span>{waist !== "" ? waist + "cm" : "--"}</span>
-          </div>
-          <div className="user-data user-hip">
-            Hip: <span>{hip !== "" ? hip + "cm" : "--"}</span>
           </div>
         </div>
 

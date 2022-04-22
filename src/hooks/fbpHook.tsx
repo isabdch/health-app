@@ -34,7 +34,7 @@ export function FbpProvider({ children }: FbpProviderProps) {
     }
 
     if (localStorage.getItem("waist") != null) {
-      setHip(localStorage.getItem("waist")!);
+      setWaist(localStorage.getItem("waist")!);
     }
 
     if (localStorage.getItem("hip") != null) {
