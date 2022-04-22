@@ -40,7 +40,8 @@ export const ExtraInfoSectionComponent = styled("section", {
       svg: {
         position: "absolute",
         right: "-2%",
-        top: "36%",
+        top: "50%",
+        transform: "translateY(-50%)",
         zIndex: "-1",
       },
 
