@@ -33,9 +33,13 @@ export const BmiSectionComponent = styled("section", {
     color: "$ivory",
     borderRadius: "20px",
     textAlign: "justify",
+    "-webkit-hyphens": "auto",
+    "-moz-hyphens": "auto",
+    "-ms-hyphens": "auto",
+    hyphens: "auto",
 
     span: {
-      marginRight: "10px",
+      marginRight: "8px",
     },
 
     "@min1440px": {
@@ -49,6 +53,10 @@ export const BmiSectionComponent = styled("section", {
     "@max768px": {
       padding: "15px",
       textAlign: "left",
+      "-webkit-hyphens": "none",
+      "-moz-hyphens": "none",
+      "-ms-hyphens": "none",
+      hyphens: "none",
     },
   },
 
