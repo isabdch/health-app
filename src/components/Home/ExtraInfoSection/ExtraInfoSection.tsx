@@ -73,7 +73,7 @@ export function ExtraInfoSection() {
         </div>
         <div className="fbp-info">
           <h2>Your body fat percentage is</h2>
-          <h1>{fbp}%</h1>
+          <h1>{isNaN(fbp) ? 0 : fbp}%</h1>
           <div className="fbp-info-description">
             Your BFP is classified as <strong>{fbpDescription}</strong>
           </div>
