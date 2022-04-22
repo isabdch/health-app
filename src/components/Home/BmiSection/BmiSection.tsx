@@ -11,6 +11,8 @@ export function BmiSection() {
   const [bmiDescription, setBmiDescription] = useState<string>("");
   const [bmiConsequences, setBmiConsequences] = useState<string>("");
 
+  const [showWarning, setShowWarning] = useState<boolean>(false);
+
   useEffect(() => {
     function calcBmi(userWeight: number, userHeight: number) {
       const userHeightInMeter = userHeight / 100;
@@ -50,7 +52,7 @@ export function BmiSection() {
 
   return (
     <BmiSectionComponent>
-      <h2>Your BMI is:</h2>
+      <h2>Your BMI is</h2>
       <h1>{isNaN(bmi) ? 0 : bmi.toString()}</h1>
       <p className="bmi-description">
         This is considered <strong>{bmiDescription}</strong>
@@ -58,19 +60,18 @@ export function BmiSection() {
       <p className="bmi-consequences">
         <strong>What can this cause:</strong> {bmiConsequences}
       </p>
-      <div className="bmi-warning">
-        <span>
-          <i className="fa-solid fa-circle-info"></i>
+      <div className={showWarning ? "bmi-warning" : "bmi-warning unchecked"}>
+        <span
+          onClick={() => {
+            setShowWarning(!showWarning);
+          }}
+        >
+          <i className="fa-solid fa-circle-info"></i>{" "}
+          {showWarning ? null : "Warning"}
         </span>
-        BMI is not used for muscle builders, long distance athletes, pregnant
-        women, the elderly or young children. This is because BMI does not take
-        into account whether the weight is carried as muscle or fat, just the
-        number. Those with a higher muscle mass, such as athletes, may have a
-        high BMI but not be at greater health risk. Those with a lower muscle
-        mass, such as children who have not completed their growth or the
-        elderly who may be losing some muscle mass may have a lower BMI. During
-        pregnancy and lactation, a woman's body composition changes, so using
-        BMI is not appropriate.
+        {showWarning
+          ? "BMI is not used for muscle builders, long distance athletes, pregnant women, the elderly or young children. This is because BMI does not take into account whether the weight is carried as muscle or fat, just the number. Those with a higher muscle mass, such as athletes, may have a high BMI but not be at greater health risk. Those with a lower muscle mass, such as children who have not completed their growth or the elderly who may be losing some muscle mass may have a lower BMI. During pregnancy and lactation, a woman's body composition changes, so using         BMI is not appropriate."
+          : null}
       </div>
     </BmiSectionComponent>
   );

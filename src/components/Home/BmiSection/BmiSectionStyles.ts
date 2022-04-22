@@ -37,9 +37,25 @@ export const BmiSectionComponent = styled("section", {
     "-moz-hyphens": "auto",
     "-ms-hyphens": "auto",
     hyphens: "auto",
+    transition: "all .3s",
 
     span: {
-      marginRight: "8px",
+      cursor: "pointer",
+      transition: ".3s",
+
+      "&:hover": {
+        opacity: "0.8",
+      },
+    },
+
+    "&.unchecked": {
+      backgroundColor: "transparent",
+      color: "$blueMunsell",
+      padding: "0",
+
+      span: {
+        marginRight: 0,
+      },
     },
 
     "@min1440px": {
@@ -51,6 +67,7 @@ export const BmiSectionComponent = styled("section", {
     },
 
     "@max768px": {
+      width: "100%",
       padding: "15px",
       textAlign: "left",
       "-webkit-hyphens": "none",

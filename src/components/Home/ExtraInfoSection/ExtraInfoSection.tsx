@@ -15,6 +15,7 @@ export function ExtraInfoSection() {
           <h2>Your fat body percentage is</h2>
           <h1>FBP</h1>
           <div className="fbp-info-description">bla bla bla</div>
+          <div className="fbp-info-tips">tips tips tips</div>
         </div>
       </div>
     </ExtraInfoSectionComponent>
