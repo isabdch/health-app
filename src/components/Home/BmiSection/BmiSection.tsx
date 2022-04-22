@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { heightContext } from "../../../hooks/heightHook";
 import { weightContext } from "../../../hooks/weightHook";
+import { bmiContext } from "../../../hooks/bmiHook";
 import { BmiSectionComponent } from "./BmiSectionStyles";
 
 export function BmiSection() {
   const [weight] = useContext(weightContext);
   const [height] = useContext(heightContext);
+  const [bmi, setBmi] = useContext(bmiContext);
 
-  const [bmi, setBmi] = useState<number>(0);
   const [bmiDescription, setBmiDescription] = useState<string>("");
   const [bmiConsequences, setBmiConsequences] = useState<string>("");
 
@@ -48,7 +49,7 @@ export function BmiSection() {
     }
 
     calcBmi(Number(weight), Number(height));
-  }, [weight, height, bmi]);
+  }, [weight, height, bmi, setBmi]);
 
   return (
     <BmiSectionComponent>

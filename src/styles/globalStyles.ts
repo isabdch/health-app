@@ -31,8 +31,8 @@ export const globalStyles = globalCss({
     overflowY: "auto",
     flexUtil: {
       fFlow: "row",
-      fAlignItems: "",
-      fJustifyContent: "",
+      fAlignItems: "center",
+      fJustifyContent: "center",
     },
   },
 
