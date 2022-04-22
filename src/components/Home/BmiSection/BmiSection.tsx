@@ -54,7 +54,7 @@ export function BmiSection() {
   return (
     <BmiSectionComponent>
       <h2>Your BMI is</h2>
-      <h1>{isNaN(bmi) ? 0 : bmi.toString()}</h1>
+      <h1>{isNaN(bmi) || bmi === Infinity ? 0 : bmi.toString()}</h1>
       <p className="bmi-description">
         This is considered <strong>{bmiDescription}</strong>
       </p>
