@@ -28,7 +28,6 @@ export const BmiSectionComponent = styled("section", {
   },
 
   ".bmi-warning": {
-    width: "70%",
     padding: "1.2vw",
     backgroundColor: "$blueMunsell",
     color: "$ivory",
