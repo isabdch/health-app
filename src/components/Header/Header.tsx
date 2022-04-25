@@ -25,10 +25,10 @@ export function Header() {
           </button>
         </Link>
 
-        <Link to="/food">
+        <Link to="/recipes/search">
           <button
             className={
-              location.pathname === "/food"
+              location.pathname === "/recipes/search"
                 ? "food-section-btn checked"
                 : "food-section-btn"
             }
