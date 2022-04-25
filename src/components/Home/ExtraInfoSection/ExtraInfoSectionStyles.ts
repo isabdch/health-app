@@ -5,6 +5,7 @@ export const ExtraInfoSectionComponent = styled("section", {
   padding: "1vw 2vw",
   paddingLeft: "1vw",
   paddingTop: 0,
+  alignSelf: "end",
 
   ".extra-info-container": {
     height: "max-content",

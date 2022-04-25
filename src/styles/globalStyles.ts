@@ -65,7 +65,6 @@ export const globalStyles = globalCss({
     overflowY: "auto",
     WebkitOverflowScrolling: "touch",
     borderRadius: "20px",
-    border: "4px solid",
     outline: "none",
     padding: "20px",
 

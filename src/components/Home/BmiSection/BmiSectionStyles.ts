@@ -4,6 +4,7 @@ export const BmiSectionComponent = styled("section", {
   gridArea: "bmiSection",
   color: "$lapisLazulli",
   padding: "1vw",
+  alignSelf: "center",
   flexUtil: {
     fFlow: "column",
     fAlignItems: "flex-start",

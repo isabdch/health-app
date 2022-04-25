@@ -3,6 +3,7 @@ import { styled } from "../../../stitches.config";
 export const UserDataSectionComponent = styled("section", {
   gridArea: "userDataSection",
   padding: "1vw 2vw",
+  alignSelf: "center",
   flexUtil: {
     fFlow: "row",
     fAlignItems: "center",
@@ -75,7 +76,6 @@ export const UserDataSectionComponent = styled("section", {
   },
 
   "@min1440px": {
-    borderRadius: "1vw",
     fontSize: "1.2vw",
   },
 

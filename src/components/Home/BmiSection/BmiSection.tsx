@@ -61,12 +61,13 @@ export function BmiSection() {
       <p className="bmi-consequences">
         <strong>What can this cause:</strong> {bmiConsequences}
       </p>
-      <div className={showWarning ? "bmi-warning" : "bmi-warning unchecked"}>
-        <span
-          onClick={() => {
-            setShowWarning(!showWarning);
-          }}
-        >
+      <div
+        onClick={() => {
+          setShowWarning(!showWarning);
+        }}
+        className={showWarning ? "bmi-warning" : "bmi-warning unchecked"}
+      >
+        <span>
           <i className="fa-solid fa-circle-info"></i>{" "}
           {showWarning ? null : "Warning"}
         </span>

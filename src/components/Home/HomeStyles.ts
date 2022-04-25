@@ -6,7 +6,7 @@ export const HomeMain = styled("main", {
   display: "grid",
   gridTemplateAreas:
     "'bmiSection userDataSection' 'extraInfoSection extraInfoSection'",
-  alignContent: "space-evenly",
+  alignContent: "stretch",
 
   "@max768px": {
     gridTemplateAreas: "'bmiSection' 'extraInfoSection' 'userDataSection'",
