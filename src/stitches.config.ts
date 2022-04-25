@@ -20,6 +20,7 @@ export const {
     colors: {
       ivory: "#F9FCED",
       terraCota: "#E07A5F",
+      sinopia: "#C14725",
       celadon: "#BBE6B3",
       yellowGreenCrayola: "#D9ED92",
       darkerYellowGreenCrayola: "#B5E48C",

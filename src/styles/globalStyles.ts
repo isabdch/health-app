@@ -76,6 +76,7 @@ export const globalStyles = globalCss({
     gap: "20px",
 
     "@min1440px": {
+      padding: "1.2vw",
       gap: "1vw",
       borderRadius: "1vw",
     },

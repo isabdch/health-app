@@ -1,11 +1,29 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { recipesContext, RecipesResultType } from "../../hooks/recipesHook";
 import { RecipesSectionMain } from "./RecipesSectionStyles";
+
+type RecipesType = {
+  id: number;
+  image: string;
+  imageType: string;
+  title: string;
+};
+
+type RecipesResultType = {
+  results: RecipesType[];
+  offset: number;
+  number: number;
+  totalResults: number;
+};
 
 export function RecipesSection() {
   const [searchInput, setSearchInput] = useState<string>("");
-  const [recipes, setRecipes] = useContext(recipesContext);
+  const [recipes, setRecipes] = useState<RecipesResultType>({
+    results: [],
+    offset: 0,
+    number: 0,
+    totalResults: 0,
+  });
 
   function searchRecipes() {
     fetch(
@@ -14,19 +32,18 @@ export function RecipesSection() {
       .then((res) => res.json())
       .then((data: RecipesResultType) => {
         setRecipes(data);
+        setSearchInput("");
       });
   }
 
   useEffect(() => {
-    document.title = "healthy | recipes section";
+    document.title = "Healthy | Recipes section";
   }, []);
 
   return (
     <RecipesSectionMain>
-      <section className="recipes-suggestions section-1"></section>
-
       <section className="search-recipes-container">
-        <h1>Search for recipes</h1>
+        <h1 className="search-title">Search for recipes</h1>
 
         <form>
           <input
@@ -39,7 +56,9 @@ export function RecipesSection() {
           />
           <button
             onClick={(event) => {
-              searchRecipes();
+              if (searchInput.trim()) {
+                searchRecipes();
+              }
               event.preventDefault();
             }}
             className="search-btn"
@@ -51,18 +70,28 @@ export function RecipesSection() {
         <div className="recipes-section">
           {recipes.results.map((recipe) => {
             return (
-              <Link to={`/recipes/${recipe.id}`} target="_blank" rel="noopener noreferrer">
-                <div id={`${recipe.id}`}>
-                  <h1>{recipe.title}</h1>
+              <Link
+                to={`/recipes/${recipe.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={recipe.id}
+              >
+                <div>
                   <img src={recipe.image} alt={recipe.title} />
+
+                  <hr />
+
+                  <h1>
+                    {recipe.title.split(" ").filter((n) => n !== "").length > 6
+                      ? recipe.title.split(" ").slice(0, 5).join(" ") + "..."
+                      : recipe.title}
+                  </h1>
                 </div>
               </Link>
             );
           })}
         </div>
       </section>
-
-      <section className="recipes-suggestions section-2"></section>
     </RecipesSectionMain>
   );
 }

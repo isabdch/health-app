@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export function Home() {
   useEffect(() => {
-    document.title = "healthy | home";
+    document.title = "Healthy | Home";
   }, []);
 
   return (
