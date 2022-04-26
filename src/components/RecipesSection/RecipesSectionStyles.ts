@@ -6,11 +6,12 @@ export const RecipesSectionMain = styled("main", {
   background: "url(/assets/image.svg) no-repeat right top",
   backgroundSize: "42%",
   display: "grid",
-  gridTemplateAreas: "'mainSection' 'suggestionsSection'",
+  gridTemplateAreas: "'mainSection' 'mainSection' 'suggestionsSection'",
   alignItems: "end",
   position: "sticky",
   overflowY: "auto",
   top: 0,
+  gap: "30px",
 
   ".search-recipes-container": {
     gridArea: "mainSection",
@@ -50,7 +51,7 @@ export const RecipesSectionMain = styled("main", {
         },
 
         input: {
-          padding: "8px",
+          padding: "8px 15px",
           width: "100%",
           backgroundColor: "$ivory",
           color: "$sinopia",
@@ -79,7 +80,11 @@ export const RecipesSectionMain = styled("main", {
         },
 
         "@max1024px": {
-          width: "80%",
+          width: "75%",
+        },
+
+        "@max425px": {
+          width: "95%",
         },
       },
 
@@ -166,6 +171,104 @@ export const RecipesSectionMain = styled("main", {
 
     "@min1440px": {
       gap: "3vw",
+    },
+  },
+
+  ".suggestions-section": {
+    color: "$sinopia",
+    gridArea: "suggestionsSection",
+    width: "100%",
+    flexUtil: {
+      fFlow: "column",
+      fAlignItems: "flex-start",
+    },
+
+    h2: {
+      paddingLeft: "15px",
+      fontFamily: "'Comfortaa', cursive",
+
+      "@max720px": {
+        paddingLeft: "0px",
+      },
+    },
+
+    ".suggestions": {
+      width: "100%",
+      flexUtil: {
+        fFlow: "row wrap",
+        fAlignItems: "center",
+        fJustifyContent: "flex-start",
+      },
+
+      div: {
+        margin: "15px",
+        width: "200px",
+        height: "150px",
+        borderRadius: "10px",
+        position: "relative",
+        boxShadow: "1px 1px 10px $beige",
+        flexUtil: {
+          fJustifyContent: "center",
+          fAlignItems: "center",
+        },
+        overflow: "hidden",
+        transition: ".2s",
+
+        "&:hover": {
+          opacity: 0.9,
+        },
+
+        img: {
+          flexShrink: 0,
+          minWidth: "100%",
+          minHeight: "100%",
+        },
+
+        h1: {
+          width: "100%",
+          backgroundColor: "$ivory",
+          fontFamily: "'Comfortaa', cursive",
+          textAlign: "center",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
+          padding: "5px 0px",
+          opacity: 0.9,
+          fontSize: "1.2em",
+        },
+
+        "@min1440px": {
+          width: "18vw",
+          height: "12vw",
+          paddingBottom: "1vw",
+          borderRadius: "0.8vw",
+        },
+      },
+
+      "@min1440px": {
+        gap: "1vw",
+      },
+
+      "@max720px": {
+        flexUtil: {
+          fFlow: "row wrap",
+          fAlignItems: "center",
+          fJustifyContent: "center",
+        },
+      },
+    },
+
+    "@min1440px": {
+      gap: "0.6vw",
+    },
+
+    "@max720px": {
+      flexUtil: {
+        fFlow: "column",
+        fAlignItems: "center",
+      },
+      textAlign: "center",
+      fontSize: "0.9em",
     },
   },
 

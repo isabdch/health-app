@@ -10,7 +10,6 @@ import { FbpProvider } from "./hooks/fbpHook";
 import { GenderProvider } from "./hooks/genderHook";
 import { HeightProvider } from "./hooks/heightHook";
 import { ModalProvider } from "./hooks/modalHook";
-import { RecipesProvider } from "./hooks/recipesHook";
 import { WeightProvider } from "./hooks/weightHook";
 import { globalStyles } from "./styles/globalStyles";
 
@@ -25,19 +24,17 @@ export default function App() {
             <HeightProvider>
               <BmiProvider>
                 <FbpProvider>
-                  <RecipesProvider>
-                    <BrowserRouter>
-                      <Header />
-                      <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="recipes">
-                          <Route path="search" element={<RecipesSection />} />
-                          <Route path=":recipe" element={<Recipe />} />
-                        </Route>
-                        <Route path="*" element={<Page404 />} />
-                      </Routes>
-                    </BrowserRouter>
-                  </RecipesProvider>
+                  <BrowserRouter>
+                    <Header />
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="recipes">
+                        <Route path="search" element={<RecipesSection />} />
+                        <Route path=":recipe" element={<Recipe />} />
+                      </Route>
+                      <Route path="*" element={<Page404 />} />
+                    </Routes>
+                  </BrowserRouter>
                 </FbpProvider>
               </BmiProvider>
             </HeightProvider>
