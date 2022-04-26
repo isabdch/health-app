@@ -37,35 +37,42 @@ export function RecipesSection() {
   }
 
   useEffect(() => {
-    document.title = "Healthy | Recipes section";
+    document.title = "Healthy | Recipes";
   }, []);
 
   return (
     <RecipesSectionMain>
       <section className="search-recipes-container">
-        <h1 className="search-title">Search for recipes</h1>
+        <div className="search-section">
+          <h1 className="search-title">Explore recipes</h1>
+          <p>Healthy and delicious recipes for your diet!</p>
+          <p>
+            Get all information about the nutrients and calories each recipe
+            has.
+          </p>
 
-        <form>
-          <input
-            autoFocus
-            value={searchInput}
-            onChange={(event) => {
-              setSearchInput(event.target.value);
-            }}
-            type="text"
-          />
-          <button
-            onClick={(event) => {
-              if (searchInput.trim()) {
-                searchRecipes();
-              }
-              event.preventDefault();
-            }}
-            className="search-btn"
-          >
-            Search
-          </button>
-        </form>
+          <form>
+            <input
+              autoFocus
+              value={searchInput}
+              onChange={(event) => {
+                setSearchInput(event.target.value);
+              }}
+              type="text"
+            />
+            <button
+              onClick={(event) => {
+                if (searchInput.trim()) {
+                  searchRecipes();
+                }
+                event.preventDefault();
+              }}
+              className="search-btn"
+            >
+              <i className="fa-regular fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
 
         <div className="recipes-section">
           {recipes.results.map((recipe) => {
@@ -78,8 +85,6 @@ export function RecipesSection() {
               >
                 <div>
                   <img src={recipe.image} alt={recipe.title} />
-
-                  <hr />
 
                   <h1>
                     {recipe.title.split(" ").filter((n) => n !== "").length > 6

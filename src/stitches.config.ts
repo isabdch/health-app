@@ -19,6 +19,7 @@ export const {
   theme: {
     colors: {
       ivory: "#F9FCED",
+      beige: "#D1D6BE",
       terraCota: "#E07A5F",
       sinopia: "#C14725",
       celadon: "#BBE6B3",
@@ -39,6 +40,7 @@ export const {
     shadows: {
       lapisLazulli: "#1E6091",
       ivory: "#F9FCED",
+      beige: "#D1D6BE",
     },
   },
   media: {

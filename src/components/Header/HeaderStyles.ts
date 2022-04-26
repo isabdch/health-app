@@ -34,6 +34,10 @@ export const HeaderComponent = styled("header", {
         display: "none",
       },
     },
+
+    "@max768px": {
+      padding: "10px",
+    },
   },
 
   ".buttons": {
@@ -44,7 +48,7 @@ export const HeaderComponent = styled("header", {
     },
 
     button: {
-      margin: "30px 20px",
+      margin: "30px 10px",
       width: "50px",
       height: "50px",
       borderRadius: "50%",
@@ -58,6 +62,7 @@ export const HeaderComponent = styled("header", {
       },
 
       "@min1440px": {
+        margin: "30px 20px",
         width: "3.5vw",
         height: "3.5vw",
         fontSize: "1.6vw",

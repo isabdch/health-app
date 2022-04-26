@@ -4,10 +4,10 @@ export const RecipesSectionMain = styled("main", {
   width: "100%",
   height: "100vh",
   background: "url(/assets/image.svg) no-repeat right top",
-  backgroundSize: "60%",
+  backgroundSize: "42%",
   display: "grid",
-  gridTemplateAreas: "'mainSection mainSection leftSection'",
-  alignItems: "center",
+  gridTemplateAreas: "'mainSection' 'suggestionsSection'",
+  alignItems: "end",
   position: "sticky",
   overflowY: "auto",
   top: 0,
@@ -19,53 +19,82 @@ export const RecipesSectionMain = styled("main", {
       fAlignItems: "center",
     },
     gap: "20px",
+    paddingTop: "5vw",
     color: "$sinopia",
     transition: ".2s",
 
-    ".search-title": {
+    ".search-section": {
       width: "100%",
-      paddingTop: "5vh",
-      paddingLeft: "7vw",
-      fontFamily: "'Comfortaa', cursive",
-      fontSize: "2em",
-    },
-
-    form: {
-      width: "100%",
-      paddingLeft: "7vw",
       flexUtil: {
-        fFlow: "row",
-        fJustifyContent: "flex-start",
+        fFlow: "column",
+        fAlignItems: "flex-start",
+      },
+      gap: "10px",
+      paddingLeft: "15px",
+
+      ".search-title": {
+        fontFamily: "'Comfortaa', cursive",
+        fontSize: "2em",
       },
 
-      input: {
-        width: "30vw",
-        padding: "15px",
-        minWidth: "300px",
-        color: "$terraCota",
-        border: "2px solid $terraCota",
-        borderRight: "none",
-        borderTopLeftRadius: "9999px",
-        borderBottomLeftRadius: "9999px",
-        outline: "none",
-        backgroundColor: "white",
+      p: {
+        marginLeft: "2px",
         fontSize: "1.1em",
       },
 
-      button: {
-        padding: "15px 30px",
-        backgroundColor: "$terraCota",
-        color: "$ivory",
-        border: "2px solid $terraCota",
-        borderLeft: "none",
-        borderTopRightRadius: "9999px",
-        borderBottomRightRadius: "9999px",
-        fontSize: "1em",
-        transition: ".2s",
-
-        "&:hover": {
-          opacity: "0.9",
+      form: {
+        width: "50%",
+        flexUtil: {
+          fFlow: "row",
+          fJustifyContent: "flex-start",
         },
+
+        input: {
+          padding: "8px",
+          width: "100%",
+          backgroundColor: "$ivory",
+          color: "$sinopia",
+          border: "2px solid $terraCota",
+          borderRight: "none",
+          borderTopLeftRadius: "9999px",
+          borderBottomLeftRadius: "9999px",
+          outline: "none",
+          fontSize: "1.1em",
+        },
+
+        button: {
+          padding: "8px 20px",
+          backgroundColor: "$terraCota",
+          color: "$ivory",
+          border: "2px solid $terraCota",
+          borderLeft: "none",
+          borderTopRightRadius: "9999px",
+          borderBottomRightRadius: "9999px",
+          fontSize: "1.2em",
+          transition: ".2s",
+
+          "&:hover": {
+            opacity: "0.9",
+          },
+        },
+
+        "@max1024px": {
+          width: "80%",
+        },
+      },
+
+      "@max720px": {
+        flexUtil: {
+          fFlow: "column",
+          fAlignItems: "center",
+        },
+        paddingLeft: "0px",
+        textAlign: "center",
+      },
+
+      "@max768px": {
+        fontSize: "0.8em",
+        paddingTop: "2vh",
       },
     },
 
@@ -74,60 +103,82 @@ export const RecipesSectionMain = styled("main", {
       flexUtil: {
         fFlow: "row wrap",
         fAlignItems: "center",
-        fJustifyContent: "center",
+        fJustifyContent: "flex-start",
       },
-      gap: "5px",
 
       div: {
-        width: "23vw",
-        height: "23vw",
-        margin: "30px",
-        padding: "15px",
-        transition: ".2s",
-        color: "$sinopia",
+        margin: "15px",
+        width: "200px",
+        height: "150px",
+        borderRadius: "10px",
+        position: "relative",
+        boxShadow: "1px 1px 10px $beige",
         flexUtil: {
-          fFlow: "column",
+          fJustifyContent: "center",
           fAlignItems: "center",
-          fJustifyContent: "flex-start",
         },
-        gap: "10px",
+        overflow: "hidden",
+        transition: ".2s",
 
         "&:hover": {
-          opacity: "0.9",
-        },
-
-        h1: {
-          textAlign: "center",
-          fontFamily: "'Comfortaa', cursive",
-          backgroundColor: "$ivory",
-          borderRadius: "20px",
-        },
-
-        hr: {
-          border: "2px solid",
-          width: "50%",
-          borderRadius: "9999px",
+          opacity: 0.9,
         },
 
         img: {
-          width: "18vw",
-          height: "18vw",
-          border: "4px solid $sinopia",
-          borderRadius: "50%",
+          flexShrink: 0,
+          minWidth: "100%",
+          minHeight: "100%",
+        },
+
+        h1: {
+          width: "100%",
+          backgroundColor: "$ivory",
+          fontFamily: "'Comfortaa', cursive",
+          textAlign: "center",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
+          padding: "5px 0px",
+          opacity: 0.9,
+          fontSize: "1.2em",
         },
 
         "@min1440px": {
-          padding: "1vw",
+          width: "18vw",
+          height: "12vw",
+          paddingBottom: "1vw",
+          borderRadius: "0.8vw",
+        },
+      },
+
+      "@min1440px": {
+        gap: "1vw",
+      },
+
+      "@max720px": {
+        flexUtil: {
+          fFlow: "row wrap",
+          fAlignItems: "center",
+          fJustifyContent: "center",
         },
       },
     },
 
     "@min1440px": {
-      gap: "1vw",
+      gap: "3vw",
     },
   },
 
   "@min1440px": {
     fontSize: "1vw",
+  },
+
+  "@max768px": {
+    backgroundSize: "60%",
+    alignItems: "center",
+  },
+
+  "@max425px": {
+    background: "none",
   },
 });
