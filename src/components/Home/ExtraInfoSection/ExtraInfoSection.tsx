@@ -78,7 +78,7 @@ export function ExtraInfoSection() {
             Your BFP is classified as <strong>{fbpDescription}</strong>
           </div>
           <div className="fbp-info-tips">
-            <strong>Tip:</strong> take a look at the food and recipes section!
+            <strong>Tip:</strong> take a look at the recipes section!
             There you will find many delicious and healthy meal ideas.
           </div>
         </div>
