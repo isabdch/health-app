@@ -26,6 +26,10 @@ export const HeaderComponent = styled("header", {
       color: "$lapisLazulli",
       fontFamily: "'Comfortaa', cursive",
 
+      "&.recipes-section-title": {
+        color: "$sinopia",
+      },
+
       "@max720px": {
         display: "none",
       },

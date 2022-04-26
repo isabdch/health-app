@@ -9,7 +9,15 @@ export function Header() {
     <HeaderComponent>
       <div className="logo">
         <LogoImg />
-        <h1>healthy</h1>
+        <h1
+          className={
+            location.pathname.slice(0, 8) === "/recipes"
+              ? "recipes-section-title"
+              : ""
+          }
+        >
+          healthy
+        </h1>
       </div>
 
       <div className="buttons">

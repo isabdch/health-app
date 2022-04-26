@@ -1,6 +1,55 @@
-import { SVGProps } from "react";
+import { CSSProperties, SVGProps } from "react";
+import { useLocation } from "react-router-dom";
 
 export function LogoImg(props: SVGProps<SVGSVGElement>) {
+  const location = useLocation().pathname.slice(0, 8);
+
+  function changeLighterColor(): CSSProperties {
+    let fill: string;
+
+    if (location === "/recipes") {
+      fill = "#E07A5F";
+    } else {
+      fill = "#3880b6";
+    }
+
+    return {
+      stroke: "none",
+      strokeWidth: 1,
+      strokeDasharray: "none",
+      strokeLinecap: "butt",
+      strokeDashoffset: 0,
+      strokeLinejoin: "miter",
+      strokeMiterlimit: 4,
+      fillRule: "nonzero",
+      opacity: 1,
+      fill,
+    };
+  }
+
+  function changeDarkerColor(): CSSProperties {
+    let fill: string;
+
+    if (location === "/recipes") {
+      fill = "#C14725";
+    } else {
+      fill = "#1e6091";
+    }
+
+    return {
+      stroke: "none",
+      strokeWidth: 1,
+      strokeDasharray: "none",
+      strokeLinecap: "butt",
+      strokeDashoffset: 0,
+      strokeLinejoin: "miter",
+      strokeMiterlimit: 4,
+      fillRule: "nonzero",
+      opacity: 1,
+      fill,
+    };
+  }
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,34 +62,12 @@ export function LogoImg(props: SVGProps<SVGSVGElement>) {
       <rect width="100%" height="100%" fill="rgba(255,255,255,0)" />
       <g>
         <path
-          style={{
-            stroke: "none",
-            strokeWidth: 1,
-            strokeDasharray: "none",
-            strokeLinecap: "butt",
-            strokeDashoffset: 0,
-            strokeLinejoin: "miter",
-            strokeMiterlimit: 4,
-            fill: "#3880b6",
-            fillRule: "nonzero",
-            opacity: 1,
-          }}
+          style={changeLighterColor()}
           transform="matrix(-1.9257 0 0 1.9257 992.714 25.194)"
           d="M486.729 256.88c-.1.1.324 0-1.27 0-16.802 0-28.416 15.581-22.56 30.1-2.82 2.972 9.349-9.192-196.45 195.53a14.993 14.993 0 0 1-21.16 0C39.553 277.84 51.688 289.982 48.84 286.98c6.088-15.095-6.639-30.907-23.81-30.069-.01-.011-.01-.021-.02-.03C7.979 230.27-.57 201.4.03 171.77 2.355 55.475 144.268-30.274 255.87 67.34c111.539-97.56 253.514-11.926 255.84 104.43.6 29.63-7.95 58.5-24.981 85.11z"
         />
         <path
-          style={{
-            stroke: "none",
-            strokeWidth: 1,
-            strokeDasharray: "none",
-            strokeLinecap: "butt",
-            strokeDashoffset: 0,
-            strokeLinejoin: "miter",
-            strokeMiterlimit: 4,
-            fill: "#1e6091",
-            fillRule: "nonzero",
-            opacity: 1,
-          }}
+          style={changeDarkerColor()}
           transform="matrix(-1.9257 0 0 1.9257 992.709 25.194)"
           d="M486.729 256.88c-.1.1.324 0-1.27 0-16.802 0-28.416 15.581-22.56 30.1-2.82 2.972 9.349-9.192-196.45 195.53a14.964 14.964 0 0 1-10.58 4.37V67.34c69.474-60.766 156.156-53.005 211.37 2.19 49.097 49.097 60.413 123.407 19.49 187.35z"
         />
