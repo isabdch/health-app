@@ -131,13 +131,13 @@ export function Recipe() {
 
                 <ul>
                   <li>Dairy free: {recipe.dairyFree === true ? "Yes" : "No" }</li>
-                  <li>Diets:</li>
-                  <li>Dish types:</li>
                   <li>Gluten free: {recipe.glutenFree === true ? "Yes" : "No" }</li>
-                  <li>Sustainable: {recipe.sustainable === true ? "Yes" : "No" }</li>
                   <li>Vegan: {recipe.vegan === true ? "Yes" : "No" }</li>
                   <li>Vegetarian: {recipe.vegetarian === true ? "Yes" : "No" }</li>
+                  <li>Sustainable: {recipe.sustainable === true ? "Yes" : "No" }</li>
                   <li>Very healthy: {recipe.veryHealthy === true ? "Yes" : "No" }</li>
+                  <li>Diets:</li>
+                  <li>Dish types:</li>
                 </ul>
               </div>
             </div>

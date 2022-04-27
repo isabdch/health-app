@@ -25,7 +25,7 @@ type RandomRecipesResultType = {
 export function RecipesSection() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [randomRecipes, setRandomRecipes] = useState<RandomRecipesResultType>({
-    recipes: [],
+    recipes: [{ id: 0, image: "", title: "" }],
   });
   const [recipes, setRecipes] = useState<RecipesResultType>({
     results: [],
@@ -117,7 +117,7 @@ export function RecipesSection() {
         <h2>Meals suggestions</h2>
 
         <div className="suggestions">
-          {randomRecipes
+          {randomRecipes.recipes !== undefined
             ? randomRecipes.recipes.map((recipe) => {
                 return (
                   <Link
@@ -127,7 +127,10 @@ export function RecipesSection() {
                     key={recipe.id}
                   >
                     <div>
-                      <img src={recipe.image} alt={recipe.title} />
+                      <img
+                        src={recipe.image ? recipe.image : "/assets/tray.png"}
+                        alt={recipe.title}
+                      />
 
                       <h1>
                         {recipe.title.split(" ").filter((n) => n !== "")
