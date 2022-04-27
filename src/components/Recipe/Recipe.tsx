@@ -98,14 +98,14 @@ export function Recipe() {
   useEffect(() => {
     document.title = "Healthy | Recipes";
 
-    // fetch(
-    //   `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
-    // )
-    //   .then((res) => res.json())
-    //   .then((data: RecipeType) => {
-    //     console.log(data);
-    //     setRecipe(data);
-    //   });
+    fetch(
+      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
+    )
+      .then((res) => res.json())
+      .then((data: RecipeType) => {
+        console.log(data);
+        setRecipe(data);
+      });
   }, [recipeId]);
 
   return (
