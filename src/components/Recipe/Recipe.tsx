@@ -14,6 +14,7 @@ type Nutrients = {
 };
 
 type RecipeType = {
+  dairyFree: boolean;
   diets: string[];
   dishTypes: string[];
   glutenFree: boolean;
@@ -40,6 +41,7 @@ type RecipeType = {
 export function Recipe() {
   const recipeId = useLocation().pathname.slice(9);
   const [recipe, setRecipe] = useState<RecipeType>({
+    dairyFree: false,
     diets: [],
     dishTypes: [],
     glutenFree: false,
@@ -92,17 +94,17 @@ export function Recipe() {
   );
 
   useEffect(() => {
-    document.title = `Healthy | ${recipe.title}`;
+    document.title = "Healthy | Recipes";
 
-    fetch(
-      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setRecipe(data);
-      });
-  }, [recipeId, recipe]);
+    // fetch(
+    //   `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
+    // )
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     setRecipe(data);
+    //   });
+  }, [recipeId]);
 
   return (
     <RecipeSectionContainer>
@@ -118,7 +120,7 @@ export function Recipe() {
                 <ul>
                   {recipe.title
                     ? recipe.nutrition.ingredients.map((ingredient) => {
-                        return <li key={ingredient.name}>{ingredient.name}</li>;
+                        return <li key={recipe.id}>{ingredient.name}</li>;
                       })
                     : "--"}
                 </ul>
@@ -126,7 +128,17 @@ export function Recipe() {
 
               <div className="general-info">
                 <h2>General Info</h2>
-                --
+
+                <ul>
+                  <li>Dairy free: {recipe.dairyFree === true ? "Yes" : "No" }</li>
+                  <li>Diets:</li>
+                  <li>Dish types:</li>
+                  <li>Gluten free: {recipe.glutenFree === true ? "Yes" : "No" }</li>
+                  <li>Sustainable: {recipe.sustainable === true ? "Yes" : "No" }</li>
+                  <li>Vegan: {recipe.vegan === true ? "Yes" : "No" }</li>
+                  <li>Vegetarian: {recipe.vegetarian === true ? "Yes" : "No" }</li>
+                  <li>Very healthy: {recipe.veryHealthy === true ? "Yes" : "No" }</li>
+                </ul>
               </div>
             </div>
 
@@ -134,7 +146,7 @@ export function Recipe() {
               <div className="instructions">
                 <h2>Instructions</h2>
 
-                <p>{recipe.instructions ? recipe.instructions : "--"}</p>
+                <p>{recipe.instructions ? recipe.instructions.replace(/[<ol><li><span>]/g, "") : "--"}</p>
               </div>
 
               <div className="nutritional-info">
@@ -195,7 +207,7 @@ export function Recipe() {
         </div>
 
         <div className="recipe-img">
-          <img src={recipe.image ? recipe.image : "/"} alt={recipe.title} />
+          <img src={recipe.image ? recipe.image : "/assets/tray.png"} alt={recipe.title} />
 
           <p>
             It gets ready in{" "}

@@ -87,52 +87,60 @@ export function RecipesSection() {
         </div>
 
         <div className="recipes-section">
-          {recipes.results.map((recipe) => {
-            return (
-              <Link
-                to={`/recipes/${recipe.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={recipe.id}
-              >
-                <div>
-                  <img src={recipe.image} alt={recipe.title} />
+          {recipes
+            ? recipes.results.map((recipe) => {
+                return (
+                  <Link
+                    to={`/recipes/${recipe.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={recipe.id}
+                  >
+                    <div>
+                      <img src={recipe.image} alt={recipe.title} />
 
-                  <h1>
-                    {recipe.title.split(" ").filter((n) => n !== "").length > 6
-                      ? recipe.title.split(" ").slice(0, 5).join(" ") + "..."
-                      : recipe.title}
-                  </h1>
-                </div>
-              </Link>
-            );
-          })}
+                      <h1>
+                        {recipe.title.split(" ").filter((n) => n !== "")
+                          .length > 6
+                          ? recipe.title.split(" ").slice(0, 5).join(" ") +
+                            "..."
+                          : recipe.title}
+                      </h1>
+                    </div>
+                  </Link>
+                );
+              })
+            : null}
         </div>
       </section>
       <section className="suggestions-section">
         <h2>Meals suggestions</h2>
 
         <div className="suggestions">
-          {randomRecipes.recipes.map((recipe) => {
-            return (
-              <Link
-                to={`/recipes/${recipe.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={recipe.id}
-              >
-                <div>
-                  <img src={recipe.image} alt={recipe.title} />
+          {randomRecipes
+            ? randomRecipes.recipes.map((recipe) => {
+                return (
+                  <Link
+                    to={`/recipes/${recipe.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={recipe.id}
+                  >
+                    <div>
+                      <img src={recipe.image} alt={recipe.title} />
 
-                  <h1>
-                    {recipe.title.split(" ").filter((n) => n !== "").length > 6
-                      ? recipe.title.split(" ").slice(0, 5).join(" ") + "..."
-                      : recipe.title}
-                  </h1>
-                </div>
-              </Link>
-            );
-          })}
+                      <h1>
+                        {recipe.title.split(" ").filter((n) => n !== "")
+                          .length > 6
+                          ? recipe.title.split(" ").slice(0, 5).join(" ") +
+                            "..."
+                          : recipe.title}
+                      </h1>
+                    </div>
+                  </Link>
+                );
+              })
+            : null}
         </div>
       </section>
     </RecipesSectionMain>
