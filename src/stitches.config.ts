@@ -50,6 +50,7 @@ export const {
     max768px: "(max-width: 768px)",
     max720px: "(max-width: 720px)",
     max425px: "(max-width: 425px)",
+    max550px: "(max-width: 550px)",
     max320px: "(max-width: 320px)",
   },
   utils: {
