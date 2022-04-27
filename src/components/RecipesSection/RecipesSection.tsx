@@ -25,7 +25,7 @@ type RandomRecipesResultType = {
 export function RecipesSection() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [randomRecipes, setRandomRecipes] = useState<RandomRecipesResultType>({
-    recipes: [{ id: 0, image: "", title: "" }],
+    recipes: [],
   });
   const [recipes, setRecipes] = useState<RecipesResultType>({
     results: [],

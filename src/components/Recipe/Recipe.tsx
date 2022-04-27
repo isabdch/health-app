@@ -38,32 +38,34 @@ type RecipeType = {
   veryHealthy: boolean;
 };
 
+const initialState = {
+  dairyFree: false,
+  diets: [],
+  dishTypes: [],
+  glutenFree: false,
+  id: 0,
+  image: "",
+  instructions: "",
+  nutrition: {
+    caloricBreakDown: {
+      percentProtein: 0,
+      percentFat: 0,
+      percentCarbs: 0,
+    },
+    ingredients: [],
+    nutrients: [],
+  },
+  readyInMinutes: 0,
+  sustainable: false,
+  title: "",
+  vegan: false,
+  vegetarian: false,
+  veryHealthy: false,
+};
+
 export function Recipe() {
   const recipeId = useLocation().pathname.slice(9);
-  const [recipe, setRecipe] = useState<RecipeType>({
-    dairyFree: false,
-    diets: [],
-    dishTypes: [],
-    glutenFree: false,
-    id: 0,
-    image: "",
-    instructions: "",
-    nutrition: {
-      caloricBreakDown: {
-        percentProtein: 0,
-        percentFat: 0,
-        percentCarbs: 0,
-      },
-      ingredients: [],
-      nutrients: [],
-    },
-    readyInMinutes: 0,
-    sustainable: false,
-    title: "",
-    vegan: false,
-    vegetarian: false,
-    veryHealthy: false,
-  });
+  const [recipe, setRecipe] = useState<RecipeType>(initialState);
 
   const calories = recipe.nutrition.nutrients.filter(
     (nutrient) => nutrient.name === "Calories"
@@ -100,7 +102,7 @@ export function Recipe() {
     //   `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
     // )
     //   .then((res) => res.json())
-    //   .then((data) => {
+    //   .then((data: RecipeType) => {
     //     console.log(data);
     //     setRecipe(data);
     //   });
@@ -110,7 +112,7 @@ export function Recipe() {
     <RecipeSectionContainer>
       <div className="recipe-information-container">
         <div className="recipe-information-content">
-          <h1>{recipe.title ? recipe.title : "--"}</h1>
+          <h1>{recipe !== initialState ? recipe.title : "--"}</h1>
 
           <div className="recipe-info">
             <div className="recipe-section-1">
@@ -118,7 +120,7 @@ export function Recipe() {
                 <h2>Ingredients</h2>
 
                 <ul>
-                  {recipe.title
+                  {recipe !== initialState
                     ? recipe.nutrition.ingredients.map((ingredient) => {
                         return <li key={recipe.id}>{ingredient.name}</li>;
                       })
@@ -130,14 +132,32 @@ export function Recipe() {
                 <h2>General Info</h2>
 
                 <ul>
-                  <li>Dairy free: {recipe.dairyFree === true ? "Yes" : "No" }</li>
-                  <li>Gluten free: {recipe.glutenFree === true ? "Yes" : "No" }</li>
-                  <li>Vegan: {recipe.vegan === true ? "Yes" : "No" }</li>
-                  <li>Vegetarian: {recipe.vegetarian === true ? "Yes" : "No" }</li>
-                  <li>Sustainable: {recipe.sustainable === true ? "Yes" : "No" }</li>
-                  <li>Very healthy: {recipe.veryHealthy === true ? "Yes" : "No" }</li>
-                  <li>Diets:</li>
-                  <li>Dish types:</li>
+                  <li>
+                    Dairy free: {recipe.dairyFree === true ? "Yes" : "No"}
+                  </li>
+                  <li>
+                    Gluten free: {recipe.glutenFree === true ? "Yes" : "No"}
+                  </li>
+                  <li>Vegan: {recipe.vegan === true ? "Yes" : "No"}</li>
+                  <li>
+                    Vegetarian: {recipe.vegetarian === true ? "Yes" : "No"}
+                  </li>
+                  <li>
+                    Sustainable: {recipe.sustainable === true ? "Yes" : "No"}
+                  </li>
+                  <li>
+                    Very healthy: {recipe.veryHealthy === true ? "Yes" : "No"}
+                  </li>
+                  <li>
+                    Diets:{" "}
+                    {recipe.diets.length >= 1 ? recipe.diets.join(", ") : "--"}
+                  </li>
+                  <li>
+                    Dish types:{" "}
+                    {recipe.dishTypes.length >= 1
+                      ? recipe.dishTypes.join(", ")
+                      : "--"}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -146,7 +166,11 @@ export function Recipe() {
               <div className="instructions">
                 <h2>Instructions</h2>
 
-                <p>{recipe.instructions ? recipe.instructions.replace(/[<ol><li><span>]/g, "") : "--"}</p>
+                <p>
+                  {recipe !== initialState
+                    ? recipe.instructions.replace(/[<ol><li><span>]/g, "")
+                    : "--"}
+                </p>
               </div>
 
               <div className="nutritional-info">
@@ -155,48 +179,48 @@ export function Recipe() {
                 <ul>
                   <li>
                     Calories:{" "}
-                    {calories[0]
+                    {recipe !== initialState
                       ? `${calories[0].amount}${calories[0].unit}`
                       : "--"}
                   </li>
                   <li>
-                    Fat: {fat[0] ? `${fat[0].amount}${fat[0].unit}` : "--"}
+                    Fat: {recipe !== initialState ? `${fat[0].amount}${fat[0].unit}` : "--"}
                   </li>
                   <li>
                     Saturated fat:{" "}
-                    {saturatedFat[0]
+                    {recipe !== initialState
                       ? `${saturatedFat[0].amount}${saturatedFat[0].unit}`
                       : "--"}
                   </li>
                   <li>
                     Carbohydrates:{" "}
-                    {carbohydrates[0]
+                    {recipe !== initialState
                       ? `${carbohydrates[0].amount}${carbohydrates[0].unit}`
                       : "--"}
                   </li>
                   <li>
                     Sugar:{" "}
-                    {sugar[0] ? `${sugar[0].amount}${sugar[0].unit}` : "--"}
+                    {recipe !== initialState ? `${sugar[0].amount}${sugar[0].unit}` : "--"}
                   </li>
                   <li>
                     Cholesterol:{" "}
-                    {cholesterol[0]
+                    {recipe !== initialState
                       ? `${cholesterol[0].amount}${cholesterol[0].unit}`
                       : "--"}
                   </li>
                   <li>
                     Protein:{" "}
-                    {protein[0]
+                    {recipe !== initialState
                       ? `${protein[0].amount}${protein[0].unit}`
                       : "--"}
                   </li>
                   <li>
                     Fiber:{" "}
-                    {fiber[0] ? `${fiber[0].amount}${fiber[0].unit}` : "--"}
+                    {recipe !== initialState ? `${fiber[0].amount}${fiber[0].unit}` : "--"}
                   </li>
                   <li>
                     Vitamin C:{" "}
-                    {vitaminC[0]
+                    {recipe !== initialState
                       ? `${vitaminC[0].amount}${vitaminC[0].unit}`
                       : "--"}
                   </li>
@@ -207,11 +231,14 @@ export function Recipe() {
         </div>
 
         <div className="recipe-img">
-          <img src={recipe.image ? recipe.image : "/assets/tray.png"} alt={recipe.title} />
+          <img
+            src={recipe !== initialState ? recipe.image : "/assets/tray.png"}
+            alt={recipe !== initialState ? recipe.title : ""}
+          />
 
           <p>
-            It gets ready in{" "}
-            {recipe.readyInMinutes ? recipe.readyInMinutes : "--"} minutes.
+            Gets ready in {recipe !== initialState ? recipe.readyInMinutes : "--"}{" "}
+            minutes.
           </p>
         </div>
       </div>

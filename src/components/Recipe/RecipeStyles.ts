@@ -3,8 +3,8 @@ import { styled } from "../../stitches.config";
 export const RecipeSectionContainer = styled("section", {
   width: "100%",
   height: "100%",
-  background: "url(/assets/image.svg) no-repeat right bottom",
-  backgroundSize: "40%",
+  // background: "url(/assets/image.svg) no-repeat right bottom",
+  // backgroundSize: "40%",
   display: "grid",
   gridTemplateAreas:
     "'recipeInfoSection' 'recipeInfoSection' 'similarRecipesSection'",
