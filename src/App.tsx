@@ -29,12 +29,14 @@ export default function App() {
                     <BrowserRouter>
                       <Header />
                       <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="recipes">
-                          <Route path="search" element={<RecipesSection />} />
-                          <Route path=":recipe" element={<Recipe />} />
+                        <Route path="health-app">
+                          <Route path="home" element={<Home />} />
+                          <Route path="recipes">
+                            <Route path="search" element={<RecipesSection />} />
+                            <Route path=":recipe" element={<Recipe />} />
+                          </Route>
+                          <Route path="*" element={<Page404 />} />
                         </Route>
-                        <Route path="*" element={<Page404 />} />
                       </Routes>
                     </BrowserRouter>
                   </FbpProvider>

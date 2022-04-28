@@ -21,10 +21,10 @@ export function Header() {
       </div>
 
       <div className="buttons">
-        <Link to="/">
+        <Link to="/health-app/home">
           <button
             className={
-              location.pathname === "/"
+              location.pathname === "/health-app/home"
                 ? "fitness-section-btn checked"
                 : "fitness-section-btn"
             }
@@ -33,10 +33,10 @@ export function Header() {
           </button>
         </Link>
 
-        <Link to="/recipes/search">
+        <Link to="/health-app/recipes/search">
           <button
             className={
-              location.pathname === "/recipes/search"
+              location.pathname === "/health-app/recipes/search"
                 ? "food-section-btn checked"
                 : "food-section-btn"
             }
@@ -46,7 +46,12 @@ export function Header() {
         </Link>
       </div>
 
-      <a className="credits" href="https://github.com/isabdch" target="_blank" rel="noreferrer">
+      <a
+        className="credits"
+        href="https://github.com/isabdch"
+        target="_blank"
+        rel="noreferrer"
+      >
         by isabdch
       </a>
     </HeaderComponent>

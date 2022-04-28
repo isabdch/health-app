@@ -98,7 +98,7 @@ export function RecipesSection() {
               ? recipes.results.map((recipe) => {
                   return (
                     <Link
-                      to={`/recipes/${recipe.id}`}
+                      to={`/health-app/recipes/${recipe.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       key={recipe.id}
@@ -128,7 +128,7 @@ export function RecipesSection() {
               ? randomRecipes.recipes.map((recipe) => {
                   return (
                     <Link
-                      to={`/recipes/${recipe.id}`}
+                      to={`/health-app/recipes/${recipe.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       key={recipe.id}
