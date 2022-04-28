@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
@@ -26,7 +26,7 @@ export default function App() {
               <HeightProvider>
                 <BmiProvider>
                   <FbpProvider>
-                    <BrowserRouter>
+                    <HashRouter>
                       <Header />
                       <Routes>
                         <Route path="health-app">
@@ -39,7 +39,7 @@ export default function App() {
                           <Route path="*" element={<Page404 />} />
                         </Route>
                       </Routes>
-                    </BrowserRouter>
+                    </HashRouter>
                   </FbpProvider>
                 </BmiProvider>
               </HeightProvider>
