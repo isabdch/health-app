@@ -3,17 +3,17 @@ import { styled } from "../../stitches.config";
 export const RecipeSectionContainer = styled("section", {
   width: "100%",
   height: "100%",
-  display: "grid",
-  gridTemplateAreas:
-    "'recipeInfoSection' 'recipeInfoSection' 'similarRecipesSection'",
+  textAlign: "center",
 
   ".recipe-information-container": {
+    height: "100%",
     gridArea: "recipeInfoSection",
     flexUtil: {
       fFlow: "row",
       fAlignItems: "start",
     },
     color: "$sinopia",
+    gap: "20px",
 
     ".recipe-information-content": {
       width: "60%",
@@ -37,8 +37,6 @@ export const RecipeSectionContainer = styled("section", {
         height: "100%",
         flexUtil: {
           fFlow: "row",
-          fAlignItems: "center",
-          fJustifyContent: "space-between",
         },
 
         ".recipe-section-1": {
@@ -46,31 +44,36 @@ export const RecipeSectionContainer = styled("section", {
           height: "100%",
           padding: "5px",
           flexUtil: {
-            fFlow: "column",
-            fJustifyContent: "space-around",
+            fFlow: "column-reverse",
           },
           gap: "20px",
-
-          h2: {
-            textAlign: "center",
-          },
 
           ".ingredients": {
             height: "50%",
             flexUtil: {
               fFlow: "column",
-              fAlignItems: "center",
+              fAlignItems: "flex-start",
+              fJustifyContent: "center",
             },
             gap: "5px",
+
+            ul: {
+              textAlign: "left",
+            },
           },
 
           ".general-info": {
             height: "50%",
             flexUtil: {
               fFlow: "column",
-              fAlignItems: "center",
+              fAlignItems: "flex-start",
+              fJustifyContent: "center",
             },
             gap: "5px",
+
+            ul: {
+              textAlign: "left",
+            },
           },
 
           "@max768px": {
@@ -83,31 +86,36 @@ export const RecipeSectionContainer = styled("section", {
           height: "100%",
           padding: "5px",
           flexUtil: {
-            fFlow: "column",
-            fJustifyContent: "space-around",
+            fFlow: "column-reverse",
           },
           gap: "20px",
-
-          h2: {
-            textAlign: "center",
-          },
 
           ".instructions": {
             height: "50%",
             flexUtil: {
               fFlow: "column",
-              fAlignItems: "center",
+              fAlignItems: "flex-start",
+              fJustifyContent: "center",
             },
             gap: "5px",
+
+            p: {
+              textAlign: "left",
+            },
           },
 
           ".nutritional-info": {
             height: "50%",
             flexUtil: {
               fFlow: "column",
-              fAlignItems: "center",
+              fAlignItems: "flex-start",
+              fJustifyContent: "center",
             },
             gap: "5px",
+
+            ul: {
+              textAlign: "left",
+            },
           },
 
           "@max768px": {
@@ -120,7 +128,6 @@ export const RecipeSectionContainer = styled("section", {
             fFlow: "column",
           },
           gap: "50px",
-          textAlign: "center",
         },
       },
 
@@ -131,11 +138,12 @@ export const RecipeSectionContainer = styled("section", {
 
     ".recipe-img": {
       width: "40%",
-      textAlign: "center",
+      height: "100%",
 
       img: {
+        border: "4px solid",
+        borderRadius: "15px",
         width: "100%",
-        height: "100%",
         backgroundColor: "white",
       },
 
@@ -159,10 +167,6 @@ export const RecipeSectionContainer = styled("section", {
       },
       gap: "20px",
     },
-  },
-
-  ".similar-recipes-section": {
-    gridArea: "similarRecipesSection",
   },
 
   "@min1440px": {

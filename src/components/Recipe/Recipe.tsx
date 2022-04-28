@@ -96,8 +96,6 @@ export function Recipe() {
   );
 
   useEffect(() => {
-    document.title = "Healthy | Recipes";
-
     fetch(
       `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
     )
@@ -122,7 +120,12 @@ export function Recipe() {
                 <ul>
                   {recipe !== initialState
                     ? recipe.nutrition.ingredients.map((ingredient) => {
-                        return <li key={recipe.id}>{ingredient.name}</li>;
+                        return (
+                          <li key={ingredient.name}>
+                            {ingredient.name.charAt(0).toUpperCase() +
+                              ingredient.name.slice(1, ingredient.name.length)}
+                          </li>
+                        );
                       })
                     : "--"}
                 </ul>
@@ -168,7 +171,15 @@ export function Recipe() {
 
                 <p>
                   {recipe !== initialState
-                    ? recipe.instructions.replace(/[<ol><li><span>]/g, "")
+                    ? recipe.instructions
+                        .replaceAll("<ol>", "")
+                        .replaceAll("</ol>", "")
+                        .replaceAll("<li>", " ")
+                        .replaceAll("</li>", "")
+                        .replaceAll("<span>", "")
+                        .replaceAll("</span>", "")
+                        .replaceAll("<div>", "")
+                        .replaceAll("</div>", "")
                     : "--"}
                 </p>
               </div>
@@ -184,7 +195,10 @@ export function Recipe() {
                       : "--"}
                   </li>
                   <li>
-                    Fat: {recipe !== initialState ? `${fat[0].amount}${fat[0].unit}` : "--"}
+                    Fat:{" "}
+                    {recipe !== initialState
+                      ? `${fat[0].amount}${fat[0].unit}`
+                      : "--"}
                   </li>
                   <li>
                     Saturated fat:{" "}
@@ -200,7 +214,9 @@ export function Recipe() {
                   </li>
                   <li>
                     Sugar:{" "}
-                    {recipe !== initialState ? `${sugar[0].amount}${sugar[0].unit}` : "--"}
+                    {recipe !== initialState
+                      ? `${sugar[0].amount}${sugar[0].unit}`
+                      : "--"}
                   </li>
                   <li>
                     Cholesterol:{" "}
@@ -216,7 +232,9 @@ export function Recipe() {
                   </li>
                   <li>
                     Fiber:{" "}
-                    {recipe !== initialState ? `${fiber[0].amount}${fiber[0].unit}` : "--"}
+                    {recipe !== initialState
+                      ? `${fiber[0].amount}${fiber[0].unit}`
+                      : "--"}
                   </li>
                   <li>
                     Vitamin C:{" "}
@@ -237,8 +255,8 @@ export function Recipe() {
           />
 
           <p>
-            Gets ready in {recipe !== initialState ? recipe.readyInMinutes : "--"}{" "}
-            minutes.
+            Gets ready in{" "}
+            {recipe !== initialState ? recipe.readyInMinutes : "--"} minutes.
           </p>
         </div>
       </div>

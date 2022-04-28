@@ -46,10 +46,6 @@ export const globalStyles = globalCss({
     textDecoration: "none",
   },
 
-  li: {
-    listStyle: "none",
-  },
-
   ".modal-overlay": {
     position: "fixed",
     inset: 0,
