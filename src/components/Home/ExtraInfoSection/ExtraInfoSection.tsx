@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { WaterBottleImg } from "../../../assets/WaterBottleImg";
+import { WaterBottleImg } from "../../../svgs/WaterBottleImg";
 import { ageContext } from "../../../hooks/ageHook";
 import { genderContext } from "../../../hooks/genderHook";
 import { weightContext } from "../../../hooks/weightHook";
