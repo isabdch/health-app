@@ -33,7 +33,7 @@ export default function App() {
                           <Route index element={<Home />} />
                           <Route path="home" element={<Home />} />
                           <Route path="recipes">
-                            <Route path="search" element={<RecipesSection />} />
+                            <Route index element={<RecipesSection />} />
                             <Route path=":recipe" element={<Recipe />} />
                           </Route>
                           <Route path="*" element={<Page404 />} />
