@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Modal } from "./Modal/Modal";
 import { BmiSection } from "./BmiSection/BmiSection";
 import { UserDataSection } from "./UserDataSection/UserDataSection";

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
 import { Page404 } from "./components/Page404/Page404";
@@ -17,30 +18,32 @@ export default function App() {
   globalStyles();
 
   return (
-    <ModalProvider>
-      <AgeProvider>
-        <GenderProvider>
-          <WeightProvider>
-            <HeightProvider>
-              <BmiProvider>
-                <FbpProvider>
-                  <BrowserRouter>
-                    <Header />
-                    <Routes>
-                      <Route path="/" element={<Home />} />
-                      <Route path="recipes">
-                        <Route path="search" element={<RecipesSection />} />
-                        <Route path=":recipe" element={<Recipe />} />
-                      </Route>
-                      <Route path="*" element={<Page404 />} />
-                    </Routes>
-                  </BrowserRouter>
-                </FbpProvider>
-              </BmiProvider>
-            </HeightProvider>
-          </WeightProvider>
-        </GenderProvider>
-      </AgeProvider>
-    </ModalProvider>
+    <HelmetProvider>
+      <ModalProvider>
+        <AgeProvider>
+          <GenderProvider>
+            <WeightProvider>
+              <HeightProvider>
+                <BmiProvider>
+                  <FbpProvider>
+                    <BrowserRouter>
+                      <Header />
+                      <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="recipes">
+                          <Route path="search" element={<RecipesSection />} />
+                          <Route path=":recipe" element={<Recipe />} />
+                        </Route>
+                        <Route path="*" element={<Page404 />} />
+                      </Routes>
+                    </BrowserRouter>
+                  </FbpProvider>
+                </BmiProvider>
+              </HeightProvider>
+            </WeightProvider>
+          </GenderProvider>
+        </AgeProvider>
+      </ModalProvider>
+    </HelmetProvider>
   );
 }

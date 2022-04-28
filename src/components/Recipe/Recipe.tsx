@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { RecipeSectionContainer } from "./RecipeStyles";
 
 type Ingredients = {
@@ -16,7 +16,6 @@ type Nutrients = {
 
 type RecipeType = {
   dairyFree: boolean;
-  diets: string[];
   dishTypes: string[];
   glutenFree: boolean;
   id: number;
@@ -41,7 +40,6 @@ type RecipeType = {
 
 const initialState = {
   dairyFree: false,
-  diets: [],
   dishTypes: [],
   glutenFree: false,
   id: 0,
@@ -97,14 +95,13 @@ export function Recipe() {
   );
 
   useEffect(() => {
-    fetch(
-      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
-    )
-      .then((res) => res.json())
-      .then((data: RecipeType) => {
-        console.log(data);
-        setRecipe(data);
-      });
+    // fetch(
+    //   `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
+    // )
+    //   .then((res) => res.json())
+    //   .then((data: RecipeType) => {
+    //     setRecipe(data);
+    //   });
   }, [recipeId]);
 
   return (
@@ -148,29 +145,23 @@ export function Recipe() {
 
                   <ul>
                     <li>
-                      Dairy free: {recipe.dairyFree === true ? "Yes" : "No"}
+                      Dairy free: {recipe.dairyFree === true ? "yes" : "no"}
                     </li>
                     <li>
-                      Gluten free: {recipe.glutenFree === true ? "Yes" : "No"}
+                      Gluten free: {recipe.glutenFree === true ? "yes" : "no"}
                     </li>
-                    <li>Vegan: {recipe.vegan === true ? "Yes" : "No"}</li>
+                    <li>Vegan: {recipe.vegan === true ? "yes" : "no"}</li>
                     <li>
-                      Vegetarian: {recipe.vegetarian === true ? "Yes" : "No"}
-                    </li>
-                    <li>
-                      Sustainable: {recipe.sustainable === true ? "Yes" : "No"}
+                      Vegetarian: {recipe.vegetarian === true ? "yes" : "no"}
                     </li>
                     <li>
-                      Very healthy: {recipe.veryHealthy === true ? "Yes" : "No"}
+                      Sustainable: {recipe.sustainable === true ? "yes" : "no"}
                     </li>
                     <li>
-                      Diets:{" "}
-                      {recipe.diets.length >= 1
-                        ? recipe.diets.join(", ")
-                        : "--"}
+                      Very healthy: {recipe.veryHealthy === true ? "yes" : "no"}
                     </li>
                     <li>
-                      Dish types:{" "}
+                      Dish type(s):{" "}
                       {recipe.dishTypes.length >= 1
                         ? recipe.dishTypes.join(", ")
                         : "--"}
@@ -269,13 +260,11 @@ export function Recipe() {
             />
 
             <p>
-              Gets ready in{" "}
+              Ready in{" "}
               {recipe !== initialState ? recipe.readyInMinutes : "--"} minutes.
             </p>
           </div>
         </div>
-
-        <div className="similar-recipes-section"></div>
       </RecipeSectionContainer>
     </>
   );
