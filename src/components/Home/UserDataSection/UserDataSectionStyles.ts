@@ -6,9 +6,10 @@ export const UserDataSectionComponent = styled("section", {
   alignSelf: "center",
   flexUtil: {
     fFlow: "row",
-    fAlignItems: "center",
+    fAlignItems: "flex-start",
     fJustifyContent: "flex-end",
   },
+  height: "100%",
 
   ".user-data-container": {
     width: "200px",

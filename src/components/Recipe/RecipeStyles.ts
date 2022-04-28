@@ -24,7 +24,7 @@ export const RecipeSectionContainer = styled("section", {
       },
 
       h2: {
-        fontSize: "1.2em",
+        fontSize: "1.3em",
       },
 
       ".recipe-info": {
@@ -36,8 +36,9 @@ export const RecipeSectionContainer = styled("section", {
           padding: "5px",
           flexUtil: {
             fFlow: "column-reverse",
+            fAlignItems: "center",
           },
-          gap: "20px",
+          gap: "10px",
 
           ".ingredients": {
             flexUtil: {
@@ -60,18 +61,25 @@ export const RecipeSectionContainer = styled("section", {
 
         ".recipe-section-2": {
           padding: "5px",
+          paddingBottom: "15px",
           flexUtil: {
             fFlow: "column",
+            fAlignItems: "center",
           },
-          gap: "20px",
+          gap: "10px",
 
           ".instructions": {
+            width: "60%",
             flexUtil: {
               fFlow: "column",
               fAlignItems: "center",
               fJustifyContent: "flex-start",
             },
             gap: "5px",
+
+            "@max768px": {
+              width: "100%",
+            },
           },
 
           ".nutritional-info": {
@@ -87,6 +95,7 @@ export const RecipeSectionContainer = styled("section", {
     },
 
     ".recipe-img": {
+      width: "100%",
       borderBottomLeftRadius: "15px",
       borderBottomRightRadius: "15px",
       background: `$sinopia url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e07a5f' fill-opacity='0.25'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat`,
@@ -94,26 +103,31 @@ export const RecipeSectionContainer = styled("section", {
       fontSize: "0.9em",
 
       img: {
+        marginTop: "10px",
         boxShadow: "1px 1px 10px $kobe",
         borderRadius: "inherit",
-        borderTopLeftRadius: "0px",
-        borderTopRightRadius: "0px",
-        width: "40%",
+        borderTopLeftRadius: "15px",
+        borderTopRightRadius: "15px",
+        width: "36%",
         backgroundColor: "white",
 
         "@max1024px": {
-          width: "60%",
+          width: "50%",
         },
 
         "@max768px": {
-          width: "80%",
+          width: "60%",
         },
 
         "@max550px": {
           boxShadow: "none",
           borderRadius: "0px",
-          width: "100%",
+          width: "98%",
         },
+      },
+
+      p: {
+        padding: "5px",
       },
     },
   },

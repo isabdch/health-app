@@ -31,11 +31,9 @@ type RecipeType = {
     nutrients: Nutrients[];
   };
   readyInMinutes: number;
-  sustainable: boolean;
   title: string;
   vegan: boolean;
   vegetarian: boolean;
-  veryHealthy: boolean;
 };
 
 const initialState = {
@@ -55,11 +53,9 @@ const initialState = {
     nutrients: [],
   },
   readyInMinutes: 0,
-  sustainable: false,
   title: "",
   vegan: false,
   vegetarian: false,
-  veryHealthy: false,
 };
 
 export function Recipe() {
@@ -95,13 +91,13 @@ export function Recipe() {
   );
 
   useEffect(() => {
-    // fetch(
-    //   `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
-    // )
-    //   .then((res) => res.json())
-    //   .then((data: RecipeType) => {
-    //     setRecipe(data);
-    //   });
+    fetch(
+      `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
+    )
+      .then((res) => res.json())
+      .then((data: RecipeType) => {
+        setRecipe(data);
+      });
   }, [recipeId]);
 
   return (
@@ -158,12 +154,6 @@ export function Recipe() {
                     <li>Vegan: {recipe.vegan === true ? "yes" : "no"}</li>
                     <li>
                       Vegetarian: {recipe.vegetarian === true ? "yes" : "no"}
-                    </li>
-                    <li>
-                      Sustainable: {recipe.sustainable === true ? "yes" : "no"}
-                    </li>
-                    <li>
-                      Very healthy: {recipe.veryHealthy === true ? "yes" : "no"}
                     </li>
                     <li>
                       Dish type(s):{" "}
