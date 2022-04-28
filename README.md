@@ -7,7 +7,7 @@
 ![](https://img.shields.io/github/stars/isabdch/health-app?color=%236FC3AB&style=for-the-badge)
 ![](https://img.shields.io/github/license/isabdch/health-app?color=%236FC3AB&style=for-the-badge)
 
-## [SITE HERE](isabdch.github.io/health-app/)
+## [SITE HERE](https://isabdch.github.io/health-app/home)
 
 ![]()
 
@@ -24,7 +24,7 @@
 
 ## ✏️ Project Description
 
-In the Health App, the user can put their data such as age, gender, weight and height to calculate their BMI, ideal amount of water per day and body fat percentage. Plus, the user can explore thousands of healthy recipes in the recipes section.
+In the Health App, the user can put their data such as age, gender, weight and height to calculate their BMI, ideal amount of water per day and body fat percentage. Plus, the user can explore thousands of healthy recipes in the recipes section. In this project I consumed [Spoonacular](https://spoonacular.com/food-api) food API.
 
 <br />
 
