@@ -30,6 +30,7 @@ export default function App() {
                       <Header />
                       <Routes>
                         <Route path="health-app">
+                          <Route index element={<Home />} />
                           <Route path="home" element={<Home />} />
                           <Route path="recipes">
                             <Route path="search" element={<RecipesSection />} />
