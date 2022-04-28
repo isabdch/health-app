@@ -108,7 +108,8 @@ export function Recipe() {
     <>
       <Helmet>
         <title>
-          Healthy | {recipe !== initialState ? recipe.title : "Recipe"}
+          Healthy |{" "}
+          {recipe !== initialState ? recipe.title : `Recipe ${recipeId}`}
         </title>
         <link rel="icon" href="/assets/recipes-logo.svg" />
       </Helmet>
@@ -121,7 +122,9 @@ export function Recipe() {
             <div className="recipe-info">
               <div className="recipe-section-1">
                 <div className="ingredients">
-                  <h2>Ingredients</h2>
+                  <h2>
+                    <i className="fa-regular fa-leafy-green"></i> Ingredients
+                  </h2>
 
                   <ul>
                     {recipe !== initialState
@@ -141,7 +144,9 @@ export function Recipe() {
                 </div>
 
                 <div className="general-info">
-                  <h2>General Info</h2>
+                  <h2>
+                    <i className="fa-solid fa-circle-info"></i> General Info
+                  </h2>
 
                   <ul>
                     <li>
@@ -172,7 +177,9 @@ export function Recipe() {
 
               <div className="recipe-section-2">
                 <div className="instructions">
-                  <h2>Instructions</h2>
+                  <h2>
+                    <i className="fa-solid fa-book"></i> Instructions
+                  </h2>
 
                   <p>
                     {recipe !== initialState
@@ -190,7 +197,9 @@ export function Recipe() {
                 </div>
 
                 <div className="nutritional-info">
-                  <h2>Nutritional Info</h2>
+                  <h2>
+                    <i className="fa-regular fa-capsules"></i> Nutritional Info
+                  </h2>
 
                   <ul>
                     <li>
@@ -260,8 +269,8 @@ export function Recipe() {
             />
 
             <p>
-              Ready in{" "}
-              {recipe !== initialState ? recipe.readyInMinutes : "--"} minutes.
+              Ready in {recipe !== initialState ? recipe.readyInMinutes : "--"}{" "}
+              minutes.
             </p>
           </div>
         </div>

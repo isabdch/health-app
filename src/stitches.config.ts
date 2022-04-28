@@ -41,6 +41,7 @@ export const {
       lapisLazulli: "#1E6091",
       ivory: "#F9FCED",
       beige: "#D1D6BE",
+      kobe: "#97371D",
     },
   },
   media: {

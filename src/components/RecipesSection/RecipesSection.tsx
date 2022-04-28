@@ -50,7 +50,7 @@ export function RecipesSection() {
       "https://api.spoonacular.com/recipes/random?&number=4&tags=vegan&apiKey=9732f1faad824738bf0f4151421f22e1"
     )
       .then((res) => res.json())
-      .then((data) => setRandomRecipes(data));
+      .then((data: RandomRecipesResultType) => setRandomRecipes(data));
   }, []);
 
   return (
