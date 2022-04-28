@@ -51,7 +51,7 @@ The user can:
 - Calculate BMI;
 - Calculate ideal amount of water per day;
 - Calculate body fat percentage;
-- See recipes suggestions.
+- See recipes suggestions;
 - Search for recipes and get their nutritional information.
 
 <br />
