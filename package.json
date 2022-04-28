@@ -1,6 +1,7 @@
 {
   "name": "fitness-app",
   "version": "0.1.0",
+  "homepage": "https://isabdch.github.io/health-app",
   "private": true,
   "dependencies": {
     "@stitches/react": "^1.2.7",
@@ -18,9 +19,12 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-modal": "^3.13.1",
+    "gh-pages": "^3.2.3",
     "typescript": "^4.4.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --watchAll",
