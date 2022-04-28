@@ -92,6 +92,25 @@ export const HeaderComponent = styled("header", {
     },
   },
 
+  ".credits": {
+    position: "absolute",
+    bottom: 0,
+    margin: "5px 10px",
+    fontSize: "0.8em",
+    color: "#bcbcbc",
+    transition: ".2s",
+
+    "&:hover": {
+      transform: "scale(1.1)",
+      filter: "brightness(0.8)",
+    },
+
+    "@max720px": {
+      fontSize: "0.6em",
+      margin: "5px",
+    },
+  },
+
   "@min1440px": {
     fontSize: "1vw",
   },

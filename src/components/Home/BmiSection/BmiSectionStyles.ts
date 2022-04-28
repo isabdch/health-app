@@ -28,6 +28,7 @@ export const BmiSectionComponent = styled("section", {
   },
 
   ".bmi-warning": {
+    cursor: "pointer",
     padding: "1.2vw",
     backgroundColor: "$blueMunsell",
     color: "$ivory",
@@ -40,7 +41,6 @@ export const BmiSectionComponent = styled("section", {
     transition: "all .3s",
 
     span: {
-      cursor: "pointer",
       transition: ".3s",
 
       "&:hover": {

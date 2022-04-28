@@ -45,6 +45,10 @@ export function Header() {
           </button>
         </Link>
       </div>
+
+      <a className="credits" href="https://github.com/isabdch" target="_blank" rel="noreferrer">
+        by isabdch
+      </a>
     </HeaderComponent>
   );
 }
