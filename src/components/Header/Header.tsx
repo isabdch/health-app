@@ -24,7 +24,7 @@ export function Header() {
         <Link to="/health-app/home">
           <button
             className={
-              location.pathname === "/health-app/home"
+              location.pathname === "/health-app/home" || "/health-app/"
                 ? "fitness-section-btn checked"
                 : "fitness-section-btn"
             }
