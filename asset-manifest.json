@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/health-app/static/js/main.deaed8dd.js",
+    "main.js": "/health-app/static/js/main.acfe96c1.js",
     "index.html": "/health-app/index.html",
-    "main.deaed8dd.js.map": "/health-app/static/js/main.deaed8dd.js.map"
+    "main.acfe96c1.js.map": "/health-app/static/js/main.acfe96c1.js.map"
   },
   "entrypoints": [
-    "static/js/main.deaed8dd.js"
+    "static/js/main.acfe96c1.js"
   ]
 }
