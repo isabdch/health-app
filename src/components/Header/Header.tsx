@@ -21,11 +21,10 @@ export function Header() {
       </div>
 
       <div className="buttons">
-        <Link to="/health-app/home">
+        <Link to="/">
           <button
             className={
-              location.pathname === "/health-app/home" ||
-              (location.pathname.length >= 11 && location.pathname.length <= 12)
+              location.pathname === "/"
                 ? "fitness-section-btn checked"
                 : "fitness-section-btn"
             }
@@ -34,10 +33,10 @@ export function Header() {
           </button>
         </Link>
 
-        <Link to="/health-app/recipes/">
+        <Link to="/recipes/">
           <button
             className={
-              location.pathname === "/health-app/recipes/"
+              location.pathname === "/recipes/"
                 ? "food-section-btn checked"
                 : "food-section-btn"
             }

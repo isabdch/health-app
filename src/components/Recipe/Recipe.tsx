@@ -59,7 +59,7 @@ const initialState = {
 };
 
 export function Recipe() {
-  const recipeId = useLocation().pathname.slice(20);
+  const recipeId = useLocation().pathname.slice(9);
   const [recipe, setRecipe] = useState<RecipeType>(initialState);
 
   const calories = recipe.nutrition.nutrients.filter(
@@ -90,7 +90,7 @@ export function Recipe() {
     (nutrient) => nutrient.name === "Vitamin C"
   );
 
-  console.log(recipeId)
+  console.log(recipeId);
 
   useEffect(() => {
     fetch(

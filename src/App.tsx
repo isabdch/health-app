@@ -26,18 +26,15 @@ export default function App() {
               <HeightProvider>
                 <BmiProvider>
                   <FbpProvider>
-                    <HashRouter>
+                    <HashRouter basename="/">
                       <Header />
                       <Routes>
-                        <Route path="health-app">
-                          <Route index element={<Home />} />
-                          <Route path="home" element={<Home />} />
-                          <Route path="recipes">
-                            <Route index element={<RecipesSection />} />
-                            <Route path=":recipe" element={<Recipe />} />
-                          </Route>
-                          <Route path="*" element={<Page404 />} />
+                        <Route path="/" element={<Home />} />
+                        <Route path="recipes">
+                          <Route index element={<RecipesSection />} />
+                          <Route path=":recipe" element={<Recipe />} />
                         </Route>
+                        <Route path="*" element={<Page404 />} />
                       </Routes>
                     </HashRouter>
                   </FbpProvider>
