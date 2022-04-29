@@ -105,6 +105,7 @@ export function Modal() {
             localStorage.setItem("gender", gender);
             localStorage.setItem("weight", weight);
             localStorage.setItem("height", height);
+            window.location.reload();
           }
         }}
         className="save-modal-data-btn"

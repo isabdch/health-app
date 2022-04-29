@@ -7,7 +7,7 @@ import { heightContext } from "../../../hooks/heightHook";
 import { UserDataSectionComponent } from "./UserDataSectionStyles";
 
 export function UserDataSection() {
-  const [modal, setModal] = useContext(modalContext);
+  const [, setModal] = useContext(modalContext);
   const [age] = useContext(ageContext);
   const [gender] = useContext(genderContext);
   const [weight] = useContext(weightContext);

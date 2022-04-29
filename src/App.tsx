@@ -19,31 +19,31 @@ export default function App() {
 
   return (
     <HelmetProvider>
-      <ModalProvider>
-        <AgeProvider>
-          <GenderProvider>
-            <WeightProvider>
-              <HeightProvider>
-                <BmiProvider>
-                  <FbpProvider>
-                    <HashRouter basename="/">
-                      <Header />
-                      <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="recipes">
-                          <Route index element={<RecipesSection />} />
-                          <Route path=":recipe" element={<Recipe />} />
-                        </Route>
-                        <Route path="*" element={<Page404 />} />
-                      </Routes>
-                    </HashRouter>
-                  </FbpProvider>
-                </BmiProvider>
-              </HeightProvider>
-            </WeightProvider>
-          </GenderProvider>
-        </AgeProvider>
-      </ModalProvider>
+        <ModalProvider>
+          <AgeProvider>
+            <GenderProvider>
+              <WeightProvider>
+                <HeightProvider>
+                  <BmiProvider>
+                    <FbpProvider>
+                      <HashRouter basename="/">
+                        <Header />
+                        <Routes>
+                          <Route path="/" element={<Home />} />
+                          <Route path="recipes">
+                            <Route index element={<RecipesSection />} />
+                            <Route path=":recipe" element={<Recipe />} />
+                          </Route>
+                          <Route path="*" element={<Page404 />} />
+                        </Routes>
+                      </HashRouter>
+                    </FbpProvider>
+                  </BmiProvider>
+                </HeightProvider>
+              </WeightProvider>
+            </GenderProvider>
+          </AgeProvider>
+        </ModalProvider>
     </HelmetProvider>
   );
 }
