@@ -9,7 +9,7 @@
 
 ## [SITE HERE](https://isabdch.github.io/health-app/#/health-app/home)
 
-![]()
+![](/github/gif-readme.gif)
 
 ---
 

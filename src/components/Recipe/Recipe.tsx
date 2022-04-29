@@ -90,8 +90,6 @@ export function Recipe() {
     (nutrient) => nutrient.name === "Vitamin C"
   );
 
-  console.log(recipeId);
-
   useEffect(() => {
     fetch(
       `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=true&apiKey=9732f1faad824738bf0f4151421f22e1`
