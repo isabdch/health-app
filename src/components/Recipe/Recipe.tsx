@@ -254,7 +254,11 @@ export function Recipe() {
 
           <div className="recipe-img">
             <img
-              src={recipe !== initialState ? recipe.image : "/assets/tray.png"}
+              src={
+                recipe !== initialState
+                  ? recipe.image
+                  : `${process.env.PUBLIC_URL}/assets/tray.png`
+              }
               alt={recipe !== initialState ? recipe.title : ""}
             />
 

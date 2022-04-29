@@ -104,7 +104,14 @@ export function RecipesSection() {
                       key={recipe.id}
                     >
                       <div>
-                        <img src={recipe.image} alt={recipe.title} />
+                        <img
+                          src={
+                            recipe.image
+                              ? recipe.image
+                              : `${process.env.PUBLIC_URL}/assets/tray.png`
+                          }
+                          alt={recipe.title}
+                        />
 
                         <h1>
                           {recipe.title.split(" ").filter((n) => n !== "")
@@ -135,7 +142,11 @@ export function RecipesSection() {
                     >
                       <div>
                         <img
-                          src={recipe.image ? recipe.image : "/assets/tray.png"}
+                          src={
+                            recipe.image
+                              ? recipe.image
+                              : `${process.env.PUBLIC_URL}/assets/tray.png`
+                          }
                           alt={recipe.title}
                         />
 
