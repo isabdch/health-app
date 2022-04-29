@@ -130,6 +130,10 @@ export const RecipeSectionContainer = styled("section", {
         padding: "5px",
       },
     },
+
+    "@max550px": {
+      paddingRight: "10px",
+    },
   },
 
   "@min1440px": {

@@ -56,6 +56,7 @@ export const HeaderComponent = styled("header", {
       fontSize: "1.5rem",
       transition: ".1s",
       alignSelf: "flex-start",
+      outline: "none",
 
       "&:hover": {
         opacity: "0.85",
@@ -106,7 +107,7 @@ export const HeaderComponent = styled("header", {
     },
 
     "@max720px": {
-      fontSize: "0.6em",
+      fontSize: "0.5em",
       margin: "5px",
     },
   },
