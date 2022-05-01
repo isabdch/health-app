@@ -41,7 +41,7 @@ export function ExtraInfoSection() {
       } else if (fbp >= 24.5 && fbp <= 31) {
         setFbpDescription("acceptable.");
       } else if (fbp > 31) {
-        setFbpDescription("obese.");
+        setFbpDescription("overweight.");
       }
     } else if (gender === "Male") {
       calcFbp(Number(bmi), Number(age), 1);
@@ -55,7 +55,7 @@ export function ExtraInfoSection() {
       } else if (fbp >= 17.5 && fbp <= 25) {
         setFbpDescription("acceptable.");
       } else if (fbp > 25) {
-        setFbpDescription("obese.");
+        setFbpDescription("overweight.");
       }
     }
 
@@ -78,8 +78,8 @@ export function ExtraInfoSection() {
             Your BFP is classified as <strong>{fbpDescription}</strong>
           </div>
           <div className="fbp-info-tips">
-            <strong>Tip:</strong> take a look at the recipes section!
-            There you will find many delicious and healthy meal ideas.
+            <strong>Tip:</strong> take a look at the recipes section! There you
+            will find many delicious and healthy meal ideas.
           </div>
         </div>
       </div>

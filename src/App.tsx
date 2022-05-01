@@ -7,7 +7,6 @@ import { Recipe } from "./components/Recipe/Recipe";
 import { RecipesSection } from "./components/RecipesSection/RecipesSection";
 import { AgeProvider } from "./hooks/ageHook";
 import { BmiProvider } from "./hooks/bmiHook";
-import { FbpProvider } from "./hooks/fbpHook";
 import { GenderProvider } from "./hooks/genderHook";
 import { HeightProvider } from "./hooks/heightHook";
 import { ModalProvider } from "./hooks/modalHook";
@@ -19,31 +18,29 @@ export default function App() {
 
   return (
     <HelmetProvider>
-        <ModalProvider>
-          <AgeProvider>
-            <GenderProvider>
-              <WeightProvider>
-                <HeightProvider>
-                  <BmiProvider>
-                    <FbpProvider>
-                      <HashRouter basename="/">
-                        <Header />
-                        <Routes>
-                          <Route path="/" element={<Home />} />
-                          <Route path="recipes">
-                            <Route index element={<RecipesSection />} />
-                            <Route path=":recipe" element={<Recipe />} />
-                          </Route>
-                          <Route path="*" element={<Page404 />} />
-                        </Routes>
-                      </HashRouter>
-                    </FbpProvider>
-                  </BmiProvider>
-                </HeightProvider>
-              </WeightProvider>
-            </GenderProvider>
-          </AgeProvider>
-        </ModalProvider>
+      <ModalProvider>
+        <AgeProvider>
+          <GenderProvider>
+            <WeightProvider>
+              <HeightProvider>
+                <BmiProvider>
+                  <HashRouter basename="/">
+                    <Header />
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="recipes">
+                        <Route index element={<RecipesSection />} />
+                        <Route path=":recipe" element={<Recipe />} />
+                      </Route>
+                      <Route path="*" element={<Page404 />} />
+                    </Routes>
+                  </HashRouter>
+                </BmiProvider>
+              </HeightProvider>
+            </WeightProvider>
+          </GenderProvider>
+        </AgeProvider>
+      </ModalProvider>
     </HelmetProvider>
   );
 }

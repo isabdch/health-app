@@ -36,7 +36,7 @@ export function Header() {
         <Link to="/recipes/">
           <button
             className={
-              location.pathname === "/recipes/"
+              location.pathname.includes("/recipes/")
                 ? "food-section-btn checked"
                 : "food-section-btn"
             }
